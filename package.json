@@ -1,0 +1,13 @@
+{
+  "name": "livaura-furniture",
+  "version": "1.0.0",
+  "description": "LIVAURA (livaura.furniture) - Modern Scandinavian & Luxury Architectural Furniture",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["furniture", "livaura", "ecommerce", "luxury", "interior-design", "scandinavian"],
+  "author": "LIVAURA",
+  "license": "MIT"
+}
