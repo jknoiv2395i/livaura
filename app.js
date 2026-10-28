@@ -3,21 +3,28 @@
  * Core Interactive Logic & State Management
  */
 
-// 1. PRODUCTS DATA
+// Indian Rupee currency formatter (Lakhs & Thousands: ₹X,XX,XXX)
+function formatINR(amount) {
+  if (amount === undefined || amount === null) return '₹0';
+  const num = Math.round(Number(amount));
+  return '₹' + num.toLocaleString('en-IN');
+}
+
+// 1. PRODUCTS DATA (AUTHENTIC INDIAN LUXURY CURATION IN INR)
 const PRODUCTS = [
   {
     id: 1,
     name: "Aura Fluted Walnut Sideboard & Credenza",
     category: "living",
-    price: 1450,
-    originalPrice: 1780,
+    price: 84500,
+    originalPrice: 98000,
     rating: 4.9,
     reviewsCount: 114,
     badge: "Artisan Handcrafted",
     description: "Masterpiece curved console credenza featuring premium hand-polished walnut with continuous vertical fluted accents, curved corner doors, and seamless soft-closing cabinetry.",
     dimensions: "68\"W x 20\"D x 34\"H",
     materials: "Solid Hardwood Frame, Fluted American Walnut Veneer, High-Luster Mirror Lacquer Finish",
-    leadTime: "In Stock - Ships in 2-3 business days",
+    leadTime: "In Stock - Ships in 2-3 business days across India",
     images: [
       "images/product-1.jpg",
       "images/product-3.jpg",
@@ -32,15 +39,15 @@ const PRODUCTS = [
     id: 2,
     name: "Celeste Fluted Dresser & Vanity Console",
     category: "bedroom",
-    price: 1290,
-    originalPrice: 1520,
+    price: 72000,
+    originalPrice: 85000,
     rating: 4.8,
     reviewsCount: 68,
     badge: "Workshop Exclusive",
     description: "Architectural fluted storage console with curved tambour side cupboards, three flush undermount central drawers, and satin brushed champagne gold perimeter trims.",
     dimensions: "58\"W x 19\"D x 32\"H",
     materials: "Engineered Hardwood Core, Italian Polyurethane Matte Lacquer, Brushed Brass Inlay",
-    leadTime: "Artisan Crafted - Ships in 5-7 days",
+    leadTime: "Artisan Crafted - Ships in 5-7 days across India",
     images: [
       "images/product-2.jpg",
       "images/product-3.jpg",
@@ -55,15 +62,15 @@ const PRODUCTS = [
     id: 3,
     name: "Palais Fluted Calacatta Marble Buffet",
     category: "living",
-    price: 1850,
-    originalPrice: 2190,
+    price: 112000,
+    originalPrice: 128000,
     rating: 5.0,
     reviewsCount: 92,
     badge: "Best Seller",
     description: "Luxury curved credenza featuring an authentic honed white Calacatta marble slab, fine fluted ribbing across four doors, and bespoke cylindrical solid brass handles and legs.",
     dimensions: "72\"W x 18\"D x 33\"H",
     materials: "Honed Calacatta Marble Slab, Fluted Ash Timber, Solid Brushed Satin Brass Hardware",
-    leadTime: "In Stock - Ships in 3-5 days",
+    leadTime: "In Stock - Ships in 3-5 days across India",
     images: [
       "images/product-3.jpg",
       "images/product-4.jpg",
@@ -78,15 +85,15 @@ const PRODUCTS = [
     id: 4,
     name: "Sereno Curved Marble-Top Nightstand",
     category: "bedroom",
-    price: 480,
-    originalPrice: 590,
+    price: 26500,
+    originalPrice: 32000,
     rating: 4.9,
     reviewsCount: 83,
     badge: "Trending",
     description: "Curved bedside table crowned with natural charcoal-veined marble. Includes dual silent soft-closing storage drawers with brushed antique brass bar hardware.",
     dimensions: "22\"W x 18\"D x 24\"H",
     materials: "Honed Natural Grey Marble, Lacquered Birchwood, Brushed Brass Hardware",
-    leadTime: "In Stock - Ships in 48 hours",
+    leadTime: "In Stock - Ships in 48 hours across India",
     images: [
       "images/product-4.jpg",
       "images/product-3.jpg",
@@ -101,15 +108,15 @@ const PRODUCTS = [
     id: 5,
     name: "Terra Curved Bouclé Loveseat",
     category: "living",
-    price: 1390,
-    originalPrice: 1680,
+    price: 78000,
+    originalPrice: 92000,
     rating: 4.9,
     reviewsCount: 145,
     badge: "Signature Design",
     description: "Cocooning organic curves and tactile rust-terracotta textured bouclé fabric. Accompanied by trio of bespoke contrast velvet and linen throw pillows.",
     dimensions: "74\"W x 38\"D x 31\"H",
-    materials: "Italian Textured Terracotta Bouclé, European Kiln-Dried Beechwood Frame, Down-Feel Core",
-    leadTime: "In Stock - Ships in 2-4 days",
+    materials: "Italian Textured Terracotta Bouclé, Kiln-Dried Hardwood Frame, Down-Feel Core",
+    leadTime: "In Stock - Ships in 2-4 days across India",
     images: [
       "images/product-5.jpg",
       "images/product-6.jpg",
@@ -124,15 +131,15 @@ const PRODUCTS = [
     id: 6,
     name: "Terra Modular 2-Seater Architectural Sofa",
     category: "living",
-    price: 1580,
-    originalPrice: 1890,
+    price: 88000,
+    originalPrice: 104000,
     rating: 4.8,
     reviewsCount: 77,
     badge: "2026 Collection",
     description: "Sculptured modern two-piece split seating sofa featuring continuous low-profile back contours, plush deep cushions, and tailored designer pillows.",
     dimensions: "78\"W x 40\"D x 31\"H",
     materials: "Heavyweight Rust Bouclé, High-Resilience High-Density Reflex Foam, Sinuous Spring Suspension",
-    leadTime: "In Stock - Ships in 3 days",
+    leadTime: "In Stock - Ships in 3 days across India",
     images: [
       "images/product-6.jpg",
       "images/product-5.jpg",
@@ -147,15 +154,15 @@ const PRODUCTS = [
     id: 7,
     name: "Grand Lounge Modular Sectional Suite",
     category: "living",
-    price: 3650,
-    originalPrice: 4250,
+    price: 195000,
+    originalPrice: 235000,
     rating: 5.0,
     reviewsCount: 52,
     badge: "Curated Suite",
     description: "Expansive architect-designed modular sectional configuration with generous depth, plush back bolsters, integrated low-profile divider tray, and complimentary cocktail tables.",
     dimensions: "142\"W x 112\"D x 30\"H (Configurable modules)",
     materials: "Commercial-Grade Heather Grey Performance Weave, Kiln-Dried Teak Internal Framing, High-Density Down Core",
-    leadTime: "Custom Built - Ships in 7-10 business days",
+    leadTime: "Custom Built in Kirti Nagar - Ships in 7-10 business days",
     images: [
       "images/product-7.jpg",
       "images/product-8.jpg",
@@ -170,15 +177,15 @@ const PRODUCTS = [
     id: 8,
     name: "Elysian Curated Salon Living Ensemble",
     category: "living",
-    price: 2890,
-    originalPrice: 3400,
+    price: 165000,
+    originalPrice: 195000,
     rating: 4.9,
     reviewsCount: 39,
     badge: "Architectural",
     description: "A masterfully balanced salon arrangement including twin curved terracotta bouclé sofas, high-back ergonomic lounge armchairs, and minimalist timber accent tables.",
     dimensions: "Tailored layout for spaces 18'x14' and larger",
     materials: "Italian Bouclé, Linen-Cotton Blends, Solid Walnut Accent Legs, High-Resiliency Foam",
-    leadTime: "Made to Order - Ships in 1-2 weeks",
+    leadTime: "Made to Order in Workshop - Ships in 1-2 weeks",
     images: [
       "images/product-8.jpg",
       "images/product-7.jpg",
@@ -192,15 +199,15 @@ const PRODUCTS = [
     id: 9,
     name: "Royale Tufted Chesterfield Wingback Chair",
     category: "living",
-    price: 890,
-    originalPrice: 1090,
+    price: 48500,
+    originalPrice: 58000,
     rating: 4.9,
     reviewsCount: 118,
     badge: "Workshop Handcrafted",
     description: "Authentic workshop-crafted high-back wing chair featuring painstaking deep diamond button tufting, rolled scroll arms, thick box-edge spring cushion, and hand-carved cabriole walnut legs.",
     dimensions: "34\"W x 35\"D x 44\"H",
     materials: "Hand-Dyed Slate Teal Cotton-Linen Weave, Handcrafted Solid Walnut Frame, Coil-Spring Foundation",
-    leadTime: "In Stock - Ships in 48 hours",
+    leadTime: "In Stock - Ships in 48 hours across India",
     images: [
       "images/product-9.jpg",
       "images/product-1.jpg",
@@ -215,15 +222,15 @@ const PRODUCTS = [
     id: 10,
     name: "Atelier Solid Espresso Storage Coffee Table",
     category: "living",
-    price: 620,
-    originalPrice: 740,
+    price: 34500,
+    originalPrice: 42000,
     rating: 4.8,
     reviewsCount: 64,
     badge: "Solid Timber",
     description: "Monolithic low-profile coffee table in deep espresso finish, featuring dual open under-shelf display cubbies for art books and decorative bowls.",
     dimensions: "48\"W x 26\"D x 16\"H",
     materials: "Solid American Oak, Deep Espresso Protective Matte Stain, Concealed Glides",
-    leadTime: "In Stock - Ships in 2-4 days",
+    leadTime: "In Stock - Ships in 2-4 days across India",
     images: [
       "images/product-7.jpg",
       "images/product-8.jpg",
@@ -237,15 +244,15 @@ const PRODUCTS = [
     id: 11,
     name: "Aura Cantilever Teak Drink Tables (Pair)",
     category: "decor",
-    price: 340,
-    originalPrice: 420,
+    price: 18500,
+    originalPrice: 24000,
     rating: 4.9,
     reviewsCount: 86,
     badge: "Set of 2",
     description: "Pair of organic guitar-pick shaped side tables with solid teak hardwood tops, matte black steel stems, and heavy stable pedestal bases designed to tuck under sofa edges.",
     dimensions: "16\"W x 14\"D x 23\"H each",
     materials: "Solid Teak Top with Clear Protective Oil, Powder-Coated Steel Pedestal",
-    leadTime: "In Stock - Ships today",
+    leadTime: "In Stock - Ships today across India",
     images: [
       "images/product-7.jpg",
       "images/product-8.jpg",
@@ -671,9 +678,9 @@ function renderProducts() {
             <div class="flex items-center gap-1.5">
               <div class="text-right">
                 ${product.originalPrice ? `
-                  <span class="text-[10px] sm:text-xs text-stone-400 line-through mr-1">$${product.originalPrice}</span>
+                  <span class="text-[10px] sm:text-xs text-stone-400 line-through mr-1">${formatINR(product.originalPrice)}</span>
                 ` : ''}
-                <span class="text-xs sm:text-base font-semibold text-stone-900 font-mono">$${product.price}</span>
+                <span class="text-xs sm:text-base font-semibold text-stone-900 font-mono">${formatINR(product.price)}</span>
               </div>
 
               <!-- 1-Tap Mobile Quick Add Button -->
@@ -771,10 +778,10 @@ function openQuickView(productId) {
           <h2 class="font-serif text-2xl lg:text-3xl font-bold text-stone-900">${product.name}</h2>
           
           <div class="mt-3 flex items-baseline gap-3">
-            <span class="text-2xl font-serif font-bold text-stone-900">$${product.price}</span>
+            <span class="text-2xl font-serif font-bold text-stone-900">${formatINR(product.price)}</span>
             ${hasDiscount ? `
-              <span class="text-base text-stone-400 line-through">$${product.originalPrice}</span>
-              <span class="text-xs font-semibold px-2 py-0.5 bg-rose-100 text-rose-800 rounded">Save $${product.originalPrice - product.price}</span>
+              <span class="text-base text-stone-400 line-through">${formatINR(product.originalPrice)}</span>
+              <span class="text-xs font-semibold px-2 py-0.5 bg-rose-100 text-rose-800 rounded">Save ${formatINR(product.originalPrice - product.price)}</span>
             ` : ''}
           </div>
         </div>
@@ -821,7 +828,7 @@ function openQuickView(productId) {
             class="flex-1 py-3 px-6 bg-stone-900 hover:bg-stone-800 text-white rounded-xl text-xs uppercase tracking-widest font-semibold flex items-center justify-center gap-2 shadow-lg transition"
           >
             <i data-lucide="shopping-bag" class="w-4 h-4"></i>
-            Add to Bag • $<span id="qv-total-price">${product.price}</span>
+            Add to Bag • <span id="qv-total-price">${formatINR(product.price)}</span>
           </button>
         </div>
 
@@ -898,7 +905,7 @@ function updateQvQtyUI() {
   const prc = document.getElementById('qv-total-price');
   if (lbl) lbl.textContent = state.quickViewQty;
   if (prc && state.quickViewProduct) {
-    prc.textContent = (state.quickViewProduct.price * state.quickViewQty).toLocaleString();
+    prc.textContent = formatINR(state.quickViewProduct.price * state.quickViewQty);
   }
 }
 
@@ -1028,7 +1035,7 @@ function updateCartUI() {
               <span class="px-2 text-xs font-semibold">${item.quantity}</span>
               <button onclick="updateCartQuantity(${index}, 1)" class="px-2 py-0.5 text-stone-600 hover:text-stone-900 text-xs">+</button>
             </div>
-            <span class="text-xs font-semibold text-stone-900 font-mono">$${itemTotal.toLocaleString()}</span>
+            <span class="text-xs font-semibold text-stone-900 font-mono">${formatINR(itemTotal)}</span>
           </div>
         </div>
         <button onclick="removeCartItem(${index})" class="text-stone-400 hover:text-rose-500 p-1 transition" title="Remove item">
@@ -1038,11 +1045,11 @@ function updateCartUI() {
     `;
   }).join('');
 
-  // Shipping progress ($1500 threshold for free white glove delivery)
-  const freeShippingThreshold = 1500;
+  // Shipping progress (₹50,000 threshold for free white-glove delivery across India)
+  const freeShippingThreshold = 50000;
   if (subtotal >= freeShippingThreshold) {
     if (shippingProgressText) {
-      shippingProgressText.innerHTML = `<span class="text-emerald-700 font-semibold flex items-center gap-1.5"><i data-lucide="sparkles" class="w-3.5 h-3.5"></i> You've earned FREE White-Glove Delivery!</span>`;
+      shippingProgressText.innerHTML = `<span class="text-emerald-700 font-semibold flex items-center gap-1.5"><i data-lucide="sparkles" class="w-3.5 h-3.5"></i> You've earned FREE White-Glove Delivery across India!</span>`;
     }
     if (shippingProgressBar) {
       shippingProgressBar.style.width = '100%';
@@ -1052,7 +1059,7 @@ function updateCartUI() {
   } else {
     const diff = freeShippingThreshold - subtotal;
     if (shippingProgressText) {
-      shippingProgressText.innerHTML = `Add <span class="font-bold text-stone-900">$${diff.toLocaleString()}</span> more for <span class="font-medium text-stone-800">FREE White-Glove Delivery</span>`;
+      shippingProgressText.innerHTML = `Add <span class="font-bold text-stone-900">${formatINR(diff)}</span> more for <span class="font-medium text-stone-800">FREE White-Glove Delivery</span>`;
     }
     if (shippingProgressBar) {
       const pct = Math.min(100, Math.round((subtotal / freeShippingThreshold) * 100));
@@ -1067,17 +1074,17 @@ function updateCartUI() {
   if (state.discountPercent > 0) {
     discountAmount = (subtotal * state.discountPercent) / 100;
     if (cartDiscountRow) cartDiscountRow.classList.remove('hidden');
-    if (cartDiscountAmountEl) cartDiscountAmountEl.textContent = `-$${discountAmount.toFixed(2)}`;
+    if (cartDiscountAmountEl) cartDiscountAmountEl.textContent = `-${formatINR(discountAmount)}`;
   } else {
     if (cartDiscountRow) cartDiscountRow.classList.add('hidden');
   }
 
-  const shippingCost = subtotal >= freeShippingThreshold ? 0 : 95;
+  const shippingCost = subtotal >= freeShippingThreshold ? 0 : 1500;
   const finalTotal = subtotal - discountAmount + shippingCost;
 
-  if (cartSubtotalEl) cartSubtotalEl.textContent = `$${subtotal.toLocaleString()}`;
-  if (cartShippingEl) cartShippingEl.textContent = shippingCost === 0 ? "FREE" : `$${shippingCost}`;
-  if (cartTotalEl) cartTotalEl.textContent = `$${finalTotal.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  if (cartSubtotalEl) cartSubtotalEl.textContent = formatINR(subtotal);
+  if (cartShippingEl) cartShippingEl.textContent = shippingCost === 0 ? "FREE" : formatINR(shippingCost);
+  if (cartTotalEl) cartTotalEl.textContent = formatINR(finalTotal);
 
   lucide.createIcons();
 }
@@ -1135,7 +1142,7 @@ function openWishlistModal() {
           <img src="${p.images[0]}" class="w-14 h-14 object-cover rounded-lg bg-stone-100" />
           <div>
             <h5 class="text-sm font-semibold text-stone-900">${p.name}</h5>
-            <span class="text-xs font-mono text-stone-600 font-semibold">$${p.price}</span>
+            <span class="text-xs font-mono text-stone-600 font-semibold">${formatINR(p.price)}</span>
           </div>
         </div>
         <div class="flex items-center gap-2">
@@ -1221,8 +1228,8 @@ function closeInquiryModal() {
 function populateCheckoutSummary() {
   const subtotal = state.cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
   const discountAmount = state.discountPercent > 0 ? (subtotal * state.discountPercent) / 100 : 0;
-  const shipping = subtotal >= 1500 ? 0 : 95;
-  const tax = (subtotal - discountAmount) * 0.08;
+  const shipping = subtotal >= 50000 ? 0 : 1500;
+  const tax = Math.round((subtotal - discountAmount) * 0.18);
   const total = subtotal - discountAmount + shipping + tax;
 
   const checkoutSubtotal = document.getElementById('co-subtotal');
@@ -1230,10 +1237,10 @@ function populateCheckoutSummary() {
   const checkoutTax = document.getElementById('co-tax');
   const checkoutTotal = document.getElementById('co-total');
 
-  if (checkoutSubtotal) checkoutSubtotal.textContent = `$${subtotal.toLocaleString()}`;
-  if (checkoutShipping) checkoutShipping.textContent = shipping === 0 ? "FREE" : `$${shipping}`;
-  if (checkoutTax) checkoutTax.textContent = `$${tax.toFixed(2)}`;
-  if (checkoutTotal) checkoutTotal.textContent = `$${total.toFixed(2)}`;
+  if (checkoutSubtotal) checkoutSubtotal.textContent = formatINR(subtotal);
+  if (checkoutShipping) checkoutShipping.textContent = shipping === 0 ? "FREE" : formatINR(shipping);
+  if (checkoutTax) checkoutTax.textContent = formatINR(tax);
+  if (checkoutTotal) checkoutTotal.textContent = formatINR(total);
 }
 
 function showOrderSuccessModal() {
@@ -1344,7 +1351,7 @@ function addCustomizedItemToCart() {
   state.cart.push({
     id: 999,
     name: "Aura Bespoke Studio Armchair",
-    price: 1150,
+    price: 78000,
     image: fabricInfo.image,
     selectedColor: `${fabricInfo.name} / ${woodInfo.name} Base`,
     quantity: 1

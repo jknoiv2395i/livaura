@@ -68,10 +68,15 @@
         <span>Spring Living: Use code <span class="text-amber-300 font-bold tracking-wider">LIVAURA15</span> for 15% off</span>
       </div>
 
-      <div class="hidden md:flex items-center gap-3.5 text-stone-400">
-        <a href="tel:+919315933794" class="flex items-center gap-1.5 text-stone-300 hover:text-amber-300 transition" title="Call Showroom">
+      <div class="hidden md:flex items-center gap-3 text-stone-400">
+        <a href="tel:+919315933794" class="flex items-center gap-1.5 text-stone-300 hover:text-amber-300 transition" title="Call Showroom (Line 1)">
           <i data-lucide="phone" class="w-3 h-3 text-amber-400"></i>
           <span>+91 93159 33794</span>
+        </a>
+        <span class="text-stone-700">•</span>
+        <a href="tel:+918130283360" class="flex items-center gap-1.5 text-stone-300 hover:text-amber-300 transition" title="Call Showroom (Line 2)">
+          <i data-lucide="phone-call" class="w-3 h-3 text-amber-400"></i>
+          <span>+91 81302 83360</span>
         </a>
         <span class="text-stone-700">•</span>
         <a href="mailto:livaurafurniture@gmail.com" class="flex items-center gap-1.5 text-stone-300 hover:text-amber-300 transition" title="Email Livaura">
@@ -222,11 +227,18 @@
             <kbd class="hidden md:inline-block text-[10px] font-mono px-1.5 py-0.2 bg-white rounded border border-stone-300 text-stone-400">⌘K</kbd>
           </button>
 
-          <!-- Phone Call Quick Action (Desktop) -->
-          <a href="tel:+919315933794" class="hidden xl:flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-semibold text-stone-700 bg-stone-100 hover:bg-stone-200 border border-stone-200 transition" title="Call Showroom: +91 93159 33794">
-            <i data-lucide="phone-call" class="w-3.5 h-3.5 text-amber-700"></i>
-            <span>+91 93159 33794</span>
-          </a>
+          <!-- Phone Call Quick Action (Desktop Both Lines) -->
+          <div class="hidden xl:flex items-center gap-1 bg-stone-100/90 rounded-full p-1 border border-stone-200">
+            <a href="tel:+919315933794" class="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold text-stone-700 hover:text-stone-950 hover:bg-white transition" title="Call Line 1: +91 93159 33794">
+              <i data-lucide="phone" class="w-3 h-3 text-amber-700"></i>
+              <span>93159 33794</span>
+            </a>
+            <span class="text-stone-300 text-xs">|</span>
+            <a href="tel:+918130283360" class="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold text-stone-700 hover:text-stone-950 hover:bg-white transition" title="Call Line 2: +91 81302 83360">
+              <i data-lucide="phone-call" class="w-3 h-3 text-amber-700"></i>
+              <span>81302 83360</span>
+            </a>
+          </div>
 
           <!-- Inquire Concierge Pill Button -->
           <button onclick="openInquiryModal()" class="hidden sm:flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[11px] uppercase tracking-wider font-semibold text-stone-800 bg-amber-50 hover:bg-amber-100 border border-amber-200/80 transition shadow-sm" title="Bespoke Design Concierge">
@@ -343,15 +355,27 @@
             Request Design Inquiry
           </button>
 
-          <!-- Quick Contact Actions -->
-          <div class="grid grid-cols-2 gap-2 text-xs">
-            <a href="tel:+919315933794" class="p-2.5 bg-amber-50 hover:bg-amber-100 border border-amber-200/90 rounded-xl text-amber-950 font-bold flex items-center justify-center gap-2 transition">
-              <i data-lucide="phone-call" class="w-3.5 h-3.5 text-amber-700"></i>
-              <span>Call Showroom</span>
-            </a>
-            <a href="https://wa.me/919315933794?text=Hi%20Livaura%2C%20I%20am%20inquiring%20about%20furniture" target="_blank" rel="noopener" class="p-2.5 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200/90 rounded-xl text-emerald-950 font-bold flex items-center justify-center gap-2 transition">
-              <i data-lucide="message-circle" class="w-3.5 h-3.5 text-emerald-600"></i>
-              <span>WhatsApp</span>
+          <!-- Quick Contact Actions (Both Indian Phone Lines & WhatsApp) -->
+          <div class="space-y-2 text-xs">
+            <div class="grid grid-cols-2 gap-2">
+              <a href="tel:+919315933794" class="p-2.5 bg-amber-50 hover:bg-amber-100 border border-amber-200/90 rounded-xl text-amber-950 font-bold flex flex-col items-center justify-center gap-0.5 text-center transition">
+                <div class="flex items-center gap-1">
+                  <i data-lucide="phone-call" class="w-3.5 h-3.5 text-amber-700"></i>
+                  <span class="text-[10px] uppercase tracking-wider text-amber-800">Call Line 1</span>
+                </div>
+                <span class="text-[11px] font-bold">93159 33794</span>
+              </a>
+              <a href="tel:+918130283360" class="p-2.5 bg-amber-50 hover:bg-amber-100 border border-amber-200/90 rounded-xl text-amber-950 font-bold flex flex-col items-center justify-center gap-0.5 text-center transition">
+                <div class="flex items-center gap-1">
+                  <i data-lucide="phone" class="w-3.5 h-3.5 text-amber-700"></i>
+                  <span class="text-[10px] uppercase tracking-wider text-amber-800">Call Line 2</span>
+                </div>
+                <span class="text-[11px] font-bold">81302 83360</span>
+              </a>
+            </div>
+            <a href="https://wa.me/919315933794?text=Hi%20Livaura%2C%20I%20am%20inquiring%20about%20furniture" target="_blank" rel="noopener" class="p-2.5 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200/90 rounded-xl text-emerald-950 font-bold flex items-center justify-center gap-2 transition w-full">
+              <i data-lucide="message-circle" class="w-4 h-4 text-emerald-600"></i>
+              <span>WhatsApp (+91 93159 33794)</span>
             </a>
           </div>
 
@@ -463,7 +487,7 @@
                 <span class="text-[9px] sm:text-[10px] uppercase tracking-wider font-semibold text-amber-800">Featured Piece</span>
                 <h4 class="font-serif text-xs sm:text-sm font-bold text-stone-900 truncate">Terra Curved Bouclé Loveseat</h4>
                 <div class="flex items-center justify-between mt-1">
-                  <span class="text-xs font-mono font-bold text-stone-900">$1,390</span>
+                  <span class="text-xs font-mono font-bold text-stone-900">₹78,000</span>
                   <button onclick="openQuickView(5)" class="text-[11px] font-semibold text-stone-700 hover:text-stone-950 underline">View Piece</button>
                 </div>
               </div>
@@ -602,7 +626,7 @@
           <div class="opacity-0 group-hover/pin:opacity-100 transition-all duration-300 pointer-events-none group-hover/pin:pointer-events-auto absolute bottom-10 -left-20 w-56 glass-card p-3 rounded-xl border border-white/80 shadow-2xl text-stone-900 z-30">
             <p class="text-[10px] uppercase font-bold text-amber-800">Seating</p>
             <p class="text-xs font-serif font-bold">Grand Lounge Sectional</p>
-            <p class="text-xs font-mono font-bold text-stone-900 mt-0.5">$3,650 <span class="text-stone-400 line-through text-[10px]">$4,250</span></p>
+            <p class="text-xs font-mono font-bold text-stone-900 mt-0.5">₹1,95,000 <span class="text-stone-400 line-through text-[10px]">₹2,35,000</span></p>
             <button onclick="quickAddToCart(7)" class="mt-2 w-full py-1.5 bg-stone-900 text-white rounded text-[11px] font-semibold uppercase tracking-wider">
               Add To Bag
             </button>
@@ -622,7 +646,7 @@
           <div class="opacity-0 group-hover/pin:opacity-100 transition-all duration-300 pointer-events-none group-hover/pin:pointer-events-auto absolute bottom-10 -left-20 w-56 glass-card p-3 rounded-xl border border-white/80 shadow-2xl text-stone-900 z-30">
             <p class="text-[10px] uppercase font-bold text-amber-800">Centerpiece</p>
             <p class="text-xs font-serif font-bold">Atelier Espresso Coffee Table</p>
-            <p class="text-xs font-mono font-bold text-stone-900 mt-0.5">$620 <span class="text-stone-400 line-through text-[10px]">$740</span></p>
+            <p class="text-xs font-mono font-bold text-stone-900 mt-0.5">₹34,500 <span class="text-stone-400 line-through text-[10px]">₹42,000</span></p>
             <button onclick="quickAddToCart(10)" class="mt-2 w-full py-1.5 bg-stone-900 text-white rounded text-[11px] font-semibold uppercase tracking-wider">
               Add To Bag
             </button>
@@ -642,7 +666,7 @@
           <div class="opacity-0 group-hover/pin:opacity-100 transition-all duration-300 pointer-events-none group-hover/pin:pointer-events-auto absolute bottom-10 -left-20 w-56 glass-card p-3 rounded-xl border border-white/80 shadow-2xl text-stone-900 z-30">
             <p class="text-[10px] uppercase font-bold text-amber-800">Accent</p>
             <p class="text-xs font-serif font-bold">Aura Cantilever Drink Tables</p>
-            <p class="text-xs font-mono font-bold text-stone-900 mt-0.5">$340 <span class="text-stone-400 line-through text-[10px]">$420</span></p>
+            <p class="text-xs font-mono font-bold text-stone-900 mt-0.5">₹18,500 <span class="text-stone-400 line-through text-[10px]">₹24,000</span></p>
             <button onclick="quickAddToCart(11)" class="mt-2 w-full py-1.5 bg-stone-900 text-white rounded text-[11px] font-semibold uppercase tracking-wider">
               Add To Bag
             </button>
@@ -662,7 +686,7 @@
           <div class="opacity-0 group-hover/pin:opacity-100 transition-all duration-300 pointer-events-none group-hover/pin:pointer-events-auto absolute bottom-10 -left-20 w-56 glass-card p-3 rounded-xl border border-white/80 shadow-2xl text-stone-900 z-30">
             <p class="text-[10px] uppercase font-bold text-amber-800">Seating</p>
             <p class="text-xs font-serif font-bold">Royale Chesterfield Armchair</p>
-            <p class="text-xs font-mono font-bold text-stone-900 mt-0.5">$890</p>
+            <p class="text-xs font-mono font-bold text-stone-900 mt-0.5">₹48,500 <span class="text-stone-400 line-through text-[10px]">₹58,000</span></p>
             <button onclick="quickAddToCart(9)" class="mt-2 w-full py-1.5 bg-stone-900 text-white rounded text-[11px] font-semibold uppercase tracking-wider">
               Add To Bag
             </button>
@@ -773,7 +797,7 @@
             <h2 class="text-3xl font-serif font-bold text-stone-900 mt-1">Livaura Bespoke Studio Collection</h2>
             <p class="text-xs text-stone-500 mt-1">Hand-tailored to order in our Livaura master workshop. Delivered in 2 weeks.</p>
             <div class="mt-3 flex items-baseline gap-3">
-              <span class="text-2xl font-bold font-serif text-stone-900">$1,390</span>
+              <span class="text-2xl font-bold font-serif text-stone-900">₹78,000</span>
               <span class="text-xs text-emerald-700 font-medium bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full">Custom Made</span>
             </div>
           </div>
@@ -836,7 +860,7 @@
               class="w-full py-4 bg-stone-900 hover:bg-stone-800 text-white rounded-2xl text-xs uppercase tracking-widest font-bold shadow-xl transition flex items-center justify-center gap-2"
             >
               <i data-lucide="check" class="w-4 h-4"></i>
-              Add Bespoke Piece To Bag • $1,150
+              Add Bespoke Piece To Bag • ₹78,000
             </button>
           </div>
 
@@ -932,22 +956,22 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-xl mx-auto mb-14">
-        <span class="text-xs uppercase tracking-widest text-stone-400 font-semibold">Voices of Homeowners</span>
-        <h2 class="text-3xl font-serif font-bold text-stone-900 mt-1">Stories From Living Spaces</h2>
+        <span class="text-xs uppercase tracking-widest text-stone-400 font-semibold">Voices of Indian Homeowners</span>
+        <h2 class="text-3xl font-serif font-bold text-stone-900 mt-1">Stories From Curated Living Spaces</h2>
         <div class="flex items-center justify-center gap-1 text-amber-400 mt-2">
           <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
           <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
           <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
           <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
           <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
-          <span class="text-xs font-semibold text-stone-700 ml-1.5">4.9 / 5.0 (480+ Verified Reviews)</span>
+          <span class="text-xs font-semibold text-stone-700 ml-1.5">4.9 / 5.0 (520+ Verified Client Reviews across India)</span>
         </div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         
         <!-- Review 1 -->
-        <div class="bg-stone-50 p-6 rounded-2xl border border-stone-200/80 flex flex-col justify-between">
+        <div class="bg-stone-50 p-6 rounded-2xl border border-stone-200/80 flex flex-col justify-between shadow-sm">
           <div class="space-y-3">
             <div class="flex text-amber-400 gap-1">
               <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
@@ -957,20 +981,20 @@
               <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
             </div>
             <p class="font-serif text-stone-800 text-sm leading-relaxed italic">
-              "The curved Nordic Bouclé sofa completely transformed our Tribeca loft. The bouclé is dense, soft, and remarkably easy to care for. The white-glove setup crew was punctual and seamless."
+              "The curved Terra Bouclé sofa completely transformed our living room in Vasant Vihar. The bouclé fabric is remarkably resilient, plush, and handles Delhi weather effortlessly. Their Kirti Nagar workshop team delivered, assembled, and polished everything in under 45 minutes."
             </p>
           </div>
           <div class="flex items-center gap-3 pt-5 border-t border-stone-200 mt-5">
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" class="w-10 h-10 rounded-full object-cover" />
+            <div class="w-10 h-10 rounded-full bg-amber-200/80 text-amber-900 font-bold flex items-center justify-center text-xs flex-shrink-0">PM</div>
             <div>
-              <h5 class="text-xs font-bold text-stone-900">Elena Rostova</h5>
-              <p class="text-[10px] text-stone-400">Architect, New York</p>
+              <h5 class="text-xs font-bold text-stone-900">Priya & Vikram Malhotra</h5>
+              <p class="text-[10px] text-stone-500">Architect & Collectors, Vasant Vihar, New Delhi</p>
             </div>
           </div>
         </div>
 
         <!-- Review 2 -->
-        <div class="bg-stone-50 p-6 rounded-2xl border border-stone-200/80 flex flex-col justify-between">
+        <div class="bg-stone-50 p-6 rounded-2xl border border-stone-200/80 flex flex-col justify-between shadow-sm">
           <div class="space-y-3">
             <div class="flex text-amber-400 gap-1">
               <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
@@ -980,20 +1004,20 @@
               <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
             </div>
             <p class="font-serif text-stone-800 text-sm leading-relaxed italic">
-              "The solid travertine fluted table is a literal work of museum sculpture. It arrived encased in custom wood crating with zero flaws. Livaura is our go-to studio."
+              "We visited their flagship studio on Kirti Nagar Main Road after a recommendation from our interior designer. The Italian Calacatta marble fluted buffet is true bespoke luxury — precision joinery, deep natural grains, and zero squeaks. Matches Milanese atelier standards at honest Indian pricing."
             </p>
           </div>
           <div class="flex items-center gap-3 pt-5 border-t border-stone-200 mt-5">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" class="w-10 h-10 rounded-full object-cover" />
+            <div class="w-10 h-10 rounded-full bg-stone-300 text-stone-900 font-bold flex items-center justify-center text-xs flex-shrink-0">RS</div>
             <div>
-              <h5 class="text-xs font-bold text-stone-900">Marcus Lindqvist</h5>
-              <p class="text-[10px] text-stone-400">Design Director, Stockholm</p>
+              <h5 class="text-xs font-bold text-stone-900">Rajesh Singhania</h5>
+              <p class="text-[10px] text-stone-500">Managing Director, DLF Golf Links, Gurugram</p>
             </div>
           </div>
         </div>
 
         <!-- Review 3 -->
-        <div class="bg-stone-50 p-6 rounded-2xl border border-stone-200/80 flex flex-col justify-between">
+        <div class="bg-stone-50 p-6 rounded-2xl border border-stone-200/80 flex flex-col justify-between shadow-sm">
           <div class="space-y-3">
             <div class="flex text-amber-400 gap-1">
               <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
@@ -1003,14 +1027,14 @@
               <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
             </div>
             <p class="font-serif text-stone-800 text-sm leading-relaxed italic">
-              "We ordered the Kyoto platform oak bed. The joinery has no loose screws or squeaks whatsoever. It feels solidly grounded and serene. Truly worth the investment."
+              "We ordered the Grand Lounge Sectional and monolithic espresso coffee table online from Bengaluru. The shipment arrived in heavy reinforced wooden crating with zero transit flaws. The kiln-dried timber framing is rock-solid. LIVAURA is easily India's finest luxury furniture brand."
             </p>
           </div>
           <div class="flex items-center gap-3 pt-5 border-t border-stone-200 mt-5">
-            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=120&q=80" class="w-10 h-10 rounded-full object-cover" />
+            <div class="w-10 h-10 rounded-full bg-emerald-200 text-emerald-900 font-bold flex items-center justify-center text-xs flex-shrink-0">AS</div>
             <div>
-              <h5 class="text-xs font-bold text-stone-900">Claire Vivienne</h5>
-              <p class="text-[10px] text-stone-400">Interior Stylist, London</p>
+              <h5 class="text-xs font-bold text-stone-900">Ananya & Rohan Sen</h5>
+              <p class="text-[10px] text-stone-500">Design Principal, Indiranagar, Bengaluru</p>
             </div>
           </div>
         </div>
@@ -1097,23 +1121,23 @@
               </div>
             </div>
 
-            <!-- Actions: Clean 2x2 Grid on Mobile, Flex on Desktop -->
+            <!-- Actions: Clean Grid of Direct Contact & Visit Options -->
             <div class="grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-2.5 sm:gap-3 pt-2">
-              <a 
-                href="https://maps.google.com/?q=A2+65,+Kirti+Nagar+Main+Rd,+Block+B,+Mansarover+Garden,+New+Delhi,+Delhi+110015" 
-                target="_blank" 
-                rel="noopener" 
-                class="px-3 sm:px-5 py-3 bg-stone-900 hover:bg-black text-white rounded-xl text-xs font-bold uppercase tracking-wider transition flex items-center justify-center gap-1.5 sm:gap-2 shadow-md text-center"
-              >
-                <i data-lucide="navigation" class="w-3.5 h-3.5 text-amber-300 flex-shrink-0"></i>
-                <span class="truncate">Directions</span>
-              </a>
               <a 
                 href="tel:+919315933794" 
                 class="px-3 sm:px-5 py-3 bg-amber-600 hover:bg-amber-700 text-white rounded-xl text-xs font-bold uppercase tracking-wider transition flex items-center justify-center gap-1.5 sm:gap-2 shadow-md text-center"
+                title="Call Primary Line: +91 93159 33794"
               >
                 <i data-lucide="phone-call" class="w-3.5 h-3.5 flex-shrink-0"></i>
-                <span class="truncate">Call 93159</span>
+                <span class="truncate">Call 93159 33794</span>
+              </a>
+              <a 
+                href="tel:+918130283360" 
+                class="px-3 sm:px-5 py-3 bg-stone-900 hover:bg-black text-white rounded-xl text-xs font-bold uppercase tracking-wider transition flex items-center justify-center gap-1.5 sm:gap-2 shadow-md text-center"
+                title="Call Secondary Line: +91 81302 83360"
+              >
+                <i data-lucide="phone" class="w-3.5 h-3.5 text-amber-300 flex-shrink-0"></i>
+                <span class="truncate">Call 81302 83360</span>
               </a>
               <a 
                 href="https://wa.me/919315933794?text=Hi%20Livaura%20Furniture%2C%20I%20am%20inquiring%20about%20your%20luxury%20collection" 
@@ -1122,14 +1146,23 @@
                 class="px-3 sm:px-5 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold uppercase tracking-wider transition flex items-center justify-center gap-1.5 sm:gap-2 shadow-md text-center"
               >
                 <i data-lucide="message-circle" class="w-3.5 h-3.5 flex-shrink-0"></i>
-                <span class="truncate">WhatsApp</span>
+                <span class="truncate">WhatsApp Chat</span>
+              </a>
+              <a 
+                href="https://maps.google.com/?q=A2+65,+Kirti+Nagar+Main+Rd,+Block+B,+Mansarover+Garden,+New+Delhi,+Delhi+110015" 
+                target="_blank" 
+                rel="noopener" 
+                class="px-3 sm:px-5 py-3 bg-stone-100 hover:bg-stone-200 text-stone-900 border border-stone-300 rounded-xl text-xs font-bold uppercase tracking-wider transition flex items-center justify-center gap-1.5 sm:gap-2 shadow-sm text-center"
+              >
+                <i data-lucide="navigation" class="w-3.5 h-3.5 text-amber-700 flex-shrink-0"></i>
+                <span class="truncate">Directions</span>
               </a>
               <button 
                 onclick="openInquiryModal()" 
-                class="px-3 sm:px-5 py-3 bg-white hover:bg-stone-50 text-stone-900 rounded-xl text-xs font-bold uppercase tracking-wider transition border border-stone-300 flex items-center justify-center gap-1.5 sm:gap-2 shadow-sm text-center"
+                class="col-span-2 sm:col-span-1 px-3 sm:px-5 py-3 bg-white hover:bg-stone-50 text-stone-900 rounded-xl text-xs font-bold uppercase tracking-wider transition border border-stone-300 flex items-center justify-center gap-1.5 sm:gap-2 shadow-sm text-center"
               >
                 <i data-lucide="calendar" class="w-3.5 h-3.5 text-stone-600 flex-shrink-0"></i>
-                <span class="truncate">Consultation</span>
+                <span class="truncate">Book Consultation</span>
               </button>
             </div>
 
@@ -1144,7 +1177,7 @@
   <section class="py-16 bg-stone-900 text-white">
     <div class="max-w-4xl mx-auto px-4 text-center space-y-6">
       <span class="text-xs uppercase tracking-widest text-amber-400 font-semibold">Join The Studio Circle</span>
-      <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white">Receive $100 Toward Your First Order</h2>
+      <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white">Receive ₹5,000 Voucher Toward Your First Order</h2>
       <p class="text-stone-400 text-sm max-w-lg mx-auto">
         Enjoy private previews of archive drops, invitations to showroom gatherings, and complimentary fabric sample swatches sent to your address.
       </p>
@@ -1296,7 +1329,7 @@
 
     <!-- Free Shipping Progress -->
     <div class="px-5 py-3 bg-stone-100 border-b border-stone-200/80 text-xs">
-      <p id="shipping-progress-text" class="text-stone-700 font-medium">Add $150 more for FREE White-Glove Delivery</p>
+      <p id="shipping-progress-text" class="text-stone-700 font-medium">Add ₹15,000 more for FREE White-Glove Delivery across India</p>
       <div class="w-full h-1.5 bg-stone-200 rounded-full mt-2 overflow-hidden">
         <div id="shipping-progress-bar" class="h-full bg-stone-800 transition-all duration-500" style="width: 40%;"></div>
       </div>
@@ -1339,11 +1372,11 @@
       <div class="space-y-1.5 text-xs text-stone-600 pt-1">
         <div class="flex justify-between">
           <span>Subtotal</span>
-          <span id="cart-subtotal" class="font-semibold text-stone-900 font-mono">$0</span>
+          <span id="cart-subtotal" class="font-semibold text-stone-900 font-mono">₹0</span>
         </div>
         <div id="cart-discount-row" class="hidden flex justify-between text-emerald-700 font-medium">
           <span>Promo Discount</span>
-          <span id="cart-discount-amount" class="font-mono">-$0</span>
+          <span id="cart-discount-amount" class="font-mono">-₹0</span>
         </div>
         <div class="flex justify-between">
           <span>In-Home White Glove Delivery</span>
@@ -1351,7 +1384,7 @@
         </div>
         <div class="flex justify-between text-sm font-bold text-stone-950 pt-2 border-t border-stone-200">
           <span>Estimated Total</span>
-          <span id="cart-total" class="font-mono text-base">$0</span>
+          <span id="cart-total" class="font-mono text-base">₹0</span>
         </div>
       </div>
 
@@ -1474,11 +1507,11 @@
 
         <!-- Summary in Checkout -->
         <div class="p-4 bg-stone-100 rounded-2xl space-y-1.5 text-xs text-stone-600">
-          <div class="flex justify-between"><span>Subtotal:</span> <span id="co-subtotal" class="font-mono font-medium text-stone-900">$0</span></div>
+          <div class="flex justify-between"><span>Subtotal:</span> <span id="co-subtotal" class="font-mono font-medium text-stone-900">₹0</span></div>
           <div class="flex justify-between"><span>White-Glove Delivery:</span> <span id="co-shipping" class="font-mono font-medium text-stone-900">FREE</span></div>
-          <div class="flex justify-between"><span>Estimated Sales Tax (8%):</span> <span id="co-tax" class="font-mono font-medium text-stone-900">$0</span></div>
+          <div class="flex justify-between"><span>Estimated GST (18%):</span> <span id="co-tax" class="font-mono font-medium text-stone-900">₹0</span></div>
           <div class="flex justify-between text-sm font-bold text-stone-900 pt-2 border-t border-stone-200">
-            <span>Final Charged Total:</span> <span id="co-total" class="font-mono text-base text-stone-950">$0</span>
+            <span>Final Charged Total:</span> <span id="co-total" class="font-mono text-base text-stone-950">₹0</span>
           </div>
         </div>
 
@@ -1538,15 +1571,26 @@
   </div>
 
   <div class="fixed bottom-20 lg:bottom-6 right-3.5 sm:right-6 z-40 flex items-center gap-2">
-    <!-- Quick Call Pill (Desktop & Tablet) -->
+    <!-- Quick Call Pill 1 (Desktop & Tablet) -->
     <a 
       href="tel:+919315933794" 
       class="hidden sm:flex items-center gap-2 px-3.5 py-3 bg-white text-stone-900 rounded-full shadow-2xl hover:bg-stone-50 transition transform hover:-translate-y-1 border border-stone-200 text-xs font-semibold"
-      title="Call Showroom: +91 93159 33794"
+      title="Call Line 1: +91 93159 33794"
     >
       <div class="w-2 h-2 rounded-full bg-emerald-500"></div>
       <i data-lucide="phone" class="w-3.5 h-3.5 text-amber-700"></i>
-      <span>+91 93159 33794</span>
+      <span>93159 33794</span>
+    </a>
+
+    <!-- Quick Call Pill 2 (Desktop & Tablet) -->
+    <a 
+      href="tel:+918130283360" 
+      class="hidden md:flex items-center gap-2 px-3.5 py-3 bg-white text-stone-900 rounded-full shadow-2xl hover:bg-stone-50 transition transform hover:-translate-y-1 border border-stone-200 text-xs font-semibold"
+      title="Call Line 2: +91 81302 83360"
+    >
+      <div class="w-2 h-2 rounded-full bg-emerald-500"></div>
+      <i data-lucide="phone" class="w-3.5 h-3.5 text-amber-700"></i>
+      <span>81302 83360</span>
     </a>
 
     <!-- WhatsApp Quick Connect (Circular Floating FAB on mobile, Pill on desktop) -->
@@ -1599,18 +1643,32 @@
         </a>
 
         <!-- Direct Phone & Email Quick Contact -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs">
           <a 
             href="tel:+919315933794" 
             class="flex items-center gap-2 p-2.5 bg-amber-50/80 hover:bg-amber-100 border border-amber-200/90 rounded-xl text-amber-950 font-medium transition"
-            title="Call Showroom"
+            title="Call Primary Line"
           >
             <div class="w-6 h-6 rounded-lg bg-amber-200 text-amber-900 flex items-center justify-center flex-shrink-0">
               <i data-lucide="phone-call" class="w-3.5 h-3.5"></i>
             </div>
             <div class="min-w-0 text-left">
-              <span class="block text-[9px] uppercase font-bold text-amber-800 tracking-wide">Call Directly</span>
+              <span class="block text-[9px] uppercase font-bold text-amber-800 tracking-wide">Primary Line</span>
               <span class="text-[11px] font-bold">+91 93159 33794</span>
+            </div>
+          </a>
+
+          <a 
+            href="tel:+918130283360" 
+            class="flex items-center gap-2 p-2.5 bg-amber-50/80 hover:bg-amber-100 border border-amber-200/90 rounded-xl text-amber-950 font-medium transition"
+            title="Call Direct Line 2"
+          >
+            <div class="w-6 h-6 rounded-lg bg-amber-200 text-amber-900 flex items-center justify-center flex-shrink-0">
+              <i data-lucide="phone-call" class="w-3.5 h-3.5"></i>
+            </div>
+            <div class="min-w-0 text-left">
+              <span class="block text-[9px] uppercase font-bold text-amber-800 tracking-wide">Direct Line 2</span>
+              <span class="text-[11px] font-bold">+91 81302 83360</span>
             </div>
           </a>
 
@@ -1630,7 +1688,7 @@
         </div>
 
         <div class="flex items-center justify-between text-[11px] px-1 text-stone-500">
-          <span>Secondary Line: <a href="tel:+918130283360" class="font-semibold text-stone-800 hover:text-amber-800 underline">+91 81302 83360</a></span>
+          <span>Kirti Nagar Experience Centre &bull; Mon - Sun (10 AM &ndash; 8 PM)</span>
           <a href="https://wa.me/919315933794?text=Hi%20Livaura%2C%20I%20have%20an%20inquiry%20regarding%20furniture" target="_blank" rel="noopener" class="text-emerald-700 font-bold hover:underline flex items-center gap-1">
             <i data-lucide="message-circle" class="w-3 h-3"></i> WhatsApp Us
           </a>
@@ -1646,7 +1704,7 @@
               id="inquiry-name" 
               type="text" 
               required 
-              placeholder="e.g. Eleanor Vance" 
+              placeholder="e.g. Priya Sharma" 
               class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl focus:outline-none focus:ring-1 focus:ring-stone-900 focus:bg-white text-stone-900" 
             />
           </div>
@@ -1657,7 +1715,7 @@
               id="inquiry-email" 
               type="email" 
               required 
-              placeholder="eleanor@example.com" 
+              placeholder="priya@example.in" 
               class="w-full px-3.5 py-2.5 bg-stone-50 border border-stone-300 rounded-xl focus:outline-none focus:ring-1 focus:ring-stone-900 focus:bg-white text-stone-900" 
             />
           </div>
