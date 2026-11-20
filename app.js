@@ -1,30 +1,30 @@
 /**
  * LIVAURA (livaura.furniture) - Luxury Architectural Furniture Web Application
  * Core Interactive Logic & State Management
+ * Bespoke Studio Edition (30+ Years Heritage • Kirti Nagar, New Delhi)
  */
 
-// Indian Rupee currency formatter (Lakhs & Thousands: ₹X,XX,XXX)
+// Indian Rupee currency formatter (fallback utility)
 function formatINR(amount) {
-  if (amount === undefined || amount === null) return '₹0';
+  if (amount === undefined || amount === null) return 'Price on Request';
   const num = Math.round(Number(amount));
   return '₹' + num.toLocaleString('en-IN');
 }
 
-// 1. PRODUCTS DATA (AUTHENTIC INDIAN LUXURY CURATION IN INR)
+// 1. PRODUCTS DATA (BESPOKE CURATION - ALL PRICES ON REQUEST)
 const PRODUCTS = [
   {
     id: 1,
     name: "Aura Fluted Walnut Sideboard & Credenza",
     category: "living",
-    price: 84500,
-    originalPrice: 98000,
     rating: 4.9,
     reviewsCount: 114,
     badge: "Artisan Handcrafted",
     description: "Masterpiece curved console credenza featuring premium hand-polished walnut with continuous vertical fluted accents, curved corner doors, and seamless soft-closing cabinetry.",
-    dimensions: "68\"W x 20\"D x 34\"H",
+    dimensions: "68\"W x 20\"D x 34\"H (Custom dimensions available)",
     materials: "Solid Hardwood Frame, Fluted American Walnut Veneer, High-Luster Mirror Lacquer Finish",
-    leadTime: "In Stock - Ships in 2-3 business days across India",
+    leadTime: "Crafted in Kirti Nagar Studio - Available to Order",
+    tags: ["sideboard", "credenza", "buffet", "console", "walnut", "fluted", "storage", "living room"],
     images: [
       "images/product-1.jpg",
       "images/product-3.jpg",
@@ -39,15 +39,14 @@ const PRODUCTS = [
     id: 2,
     name: "Celeste Fluted Dresser & Vanity Console",
     category: "bedroom",
-    price: 72000,
-    originalPrice: 85000,
     rating: 4.8,
     reviewsCount: 68,
     badge: "Workshop Exclusive",
     description: "Architectural fluted storage console with curved tambour side cupboards, three flush undermount central drawers, and satin brushed champagne gold perimeter trims.",
-    dimensions: "58\"W x 19\"D x 32\"H",
+    dimensions: "58\"W x 19\"D x 32\"H (Custom sizing available)",
     materials: "Engineered Hardwood Core, Italian Polyurethane Matte Lacquer, Brushed Brass Inlay",
-    leadTime: "Artisan Crafted - Ships in 5-7 days across India",
+    leadTime: "Artisan Crafted - Custom Made to Order",
+    tags: ["dresser", "vanity", "console", "bedroom", "drawers", "fluted", "storage", "wardrobe companion"],
     images: [
       "images/product-2.jpg",
       "images/product-3.jpg",
@@ -62,15 +61,14 @@ const PRODUCTS = [
     id: 3,
     name: "Palais Fluted Calacatta Marble Buffet",
     category: "living",
-    price: 112000,
-    originalPrice: 128000,
     rating: 5.0,
     reviewsCount: 92,
     badge: "Best Seller",
     description: "Luxury curved credenza featuring an authentic honed white Calacatta marble slab, fine fluted ribbing across four doors, and bespoke cylindrical solid brass handles and legs.",
-    dimensions: "72\"W x 18\"D x 33\"H",
+    dimensions: "72\"W x 18\"D x 33\"H (Custom sizing available)",
     materials: "Honed Calacatta Marble Slab, Fluted Ash Timber, Solid Brushed Satin Brass Hardware",
-    leadTime: "In Stock - Ships in 3-5 days across India",
+    leadTime: "Studio Handcrafted in Kirti Nagar",
+    tags: ["marble", "buffet", "credenza", "dining", "sideboard", "calacatta", "brass", "living room"],
     images: [
       "images/product-3.jpg",
       "images/product-4.jpg",
@@ -85,15 +83,14 @@ const PRODUCTS = [
     id: 4,
     name: "Sereno Curved Marble-Top Nightstand",
     category: "bedroom",
-    price: 26500,
-    originalPrice: 32000,
     rating: 4.9,
     reviewsCount: 83,
     badge: "Trending",
     description: "Curved bedside table crowned with natural charcoal-veined marble. Includes dual silent soft-closing storage drawers with brushed antique brass bar hardware.",
     dimensions: "22\"W x 18\"D x 24\"H",
     materials: "Honed Natural Grey Marble, Lacquered Birchwood, Brushed Brass Hardware",
-    leadTime: "In Stock - Ships in 48 hours across India",
+    leadTime: "Studio Handcrafted in Kirti Nagar",
+    tags: ["nightstand", "bedside table", "bedroom", "marble", "curved", "side table", "bed companion"],
     images: [
       "images/product-4.jpg",
       "images/product-3.jpg",
@@ -108,15 +105,14 @@ const PRODUCTS = [
     id: 5,
     name: "Terra Curved Bouclé Loveseat",
     category: "living",
-    price: 78000,
-    originalPrice: 92000,
     rating: 4.9,
     reviewsCount: 145,
     badge: "Signature Design",
     description: "Cocooning organic curves and tactile rust-terracotta textured bouclé fabric. Accompanied by trio of bespoke contrast velvet and linen throw pillows.",
-    dimensions: "74\"W x 38\"D x 31\"H",
+    dimensions: "74\"W x 38\"D x 31\"H (Custom length available)",
     materials: "Italian Textured Terracotta Bouclé, Kiln-Dried Hardwood Frame, Down-Feel Core",
-    leadTime: "In Stock - Ships in 2-4 days across India",
+    leadTime: "Custom Made to Order in 2-3 Weeks",
+    tags: ["sofa", "curved sofa", "loveseat", "bouclé", "living room", "terracotta", "lounge"],
     images: [
       "images/product-5.jpg",
       "images/product-6.jpg",
@@ -131,15 +127,14 @@ const PRODUCTS = [
     id: 6,
     name: "Terra Modular 2-Seater Architectural Sofa",
     category: "living",
-    price: 88000,
-    originalPrice: 104000,
     rating: 4.8,
     reviewsCount: 77,
-    badge: "2026 Collection",
+    badge: "Studio Collection",
     description: "Sculptured modern two-piece split seating sofa featuring continuous low-profile back contours, plush deep cushions, and tailored designer pillows.",
     dimensions: "78\"W x 40\"D x 31\"H",
     materials: "Heavyweight Rust Bouclé, High-Resilience High-Density Reflex Foam, Sinuous Spring Suspension",
-    leadTime: "In Stock - Ships in 3 days across India",
+    leadTime: "Bespoke Workshop Production",
+    tags: ["sofa", "modular sofa", "curved sofa", "living room", "boucle", "seating"],
     images: [
       "images/product-6.jpg",
       "images/product-5.jpg",
@@ -154,15 +149,14 @@ const PRODUCTS = [
     id: 7,
     name: "Grand Lounge Modular Sectional Suite",
     category: "living",
-    price: 195000,
-    originalPrice: 235000,
     rating: 5.0,
     reviewsCount: 52,
     badge: "Curated Suite",
     description: "Expansive architect-designed modular sectional configuration with generous depth, plush back bolsters, integrated low-profile divider tray, and complimentary cocktail tables.",
     dimensions: "142\"W x 112\"D x 30\"H (Configurable modules)",
     materials: "Commercial-Grade Heather Grey Performance Weave, Kiln-Dried Teak Internal Framing, High-Density Down Core",
-    leadTime: "Custom Built in Kirti Nagar - Ships in 7-10 business days",
+    leadTime: "Custom Built in Kirti Nagar Studio",
+    tags: ["sofa", "sectional", "modular", "lounge", "living room", "curved sofa", "suite"],
     images: [
       "images/product-7.jpg",
       "images/product-8.jpg",
@@ -177,15 +171,14 @@ const PRODUCTS = [
     id: 8,
     name: "Elysian Curated Salon Living Ensemble",
     category: "living",
-    price: 165000,
-    originalPrice: 195000,
     rating: 4.9,
     reviewsCount: 39,
     badge: "Architectural",
     description: "A masterfully balanced salon arrangement including twin curved terracotta bouclé sofas, high-back ergonomic lounge armchairs, and minimalist timber accent tables.",
     dimensions: "Tailored layout for spaces 18'x14' and larger",
     materials: "Italian Bouclé, Linen-Cotton Blends, Solid Walnut Accent Legs, High-Resiliency Foam",
-    leadTime: "Made to Order in Workshop - Ships in 1-2 weeks",
+    leadTime: "Made to Order in Studio",
+    tags: ["ensemble", "living room", "salon", "sofa", "armchair", "curved sofa", "curated suite"],
     images: [
       "images/product-8.jpg",
       "images/product-7.jpg",
@@ -199,15 +192,14 @@ const PRODUCTS = [
     id: 9,
     name: "Royale Tufted Chesterfield Wingback Chair",
     category: "living",
-    price: 48500,
-    originalPrice: 58000,
     rating: 4.9,
     reviewsCount: 118,
     badge: "Workshop Handcrafted",
     description: "Authentic workshop-crafted high-back wing chair featuring painstaking deep diamond button tufting, rolled scroll arms, thick box-edge spring cushion, and hand-carved cabriole walnut legs.",
     dimensions: "34\"W x 35\"D x 44\"H",
     materials: "Hand-Dyed Slate Teal Cotton-Linen Weave, Handcrafted Solid Walnut Frame, Coil-Spring Foundation",
-    leadTime: "In Stock - Ships in 48 hours across India",
+    leadTime: "Master Handcrafted in Kirti Nagar",
+    tags: ["chair", "artisan chair", "wingback", "chesterfield", "armchair", "tufted", "accent chair"],
     images: [
       "images/product-9.jpg",
       "images/product-1.jpg",
@@ -222,15 +214,14 @@ const PRODUCTS = [
     id: 10,
     name: "Atelier Solid Espresso Storage Coffee Table",
     category: "living",
-    price: 34500,
-    originalPrice: 42000,
     rating: 4.8,
     reviewsCount: 64,
-    badge: "Solid Timber",
+    badge: "Master Joinery",
     description: "Monolithic low-profile coffee table in deep espresso finish, featuring dual open under-shelf display cubbies for art books and decorative bowls.",
     dimensions: "48\"W x 26\"D x 16\"H",
     materials: "Solid American Oak, Deep Espresso Protective Matte Stain, Concealed Glides",
-    leadTime: "In Stock - Ships in 2-4 days across India",
+    leadTime: "Crafted in Kirti Nagar Workshop",
+    tags: ["coffee table", "table", "center table", "living room", "oak", "espresso"],
     images: [
       "images/product-7.jpg",
       "images/product-8.jpg",
@@ -244,15 +235,14 @@ const PRODUCTS = [
     id: 11,
     name: "Aura Cantilever Teak Drink Tables (Pair)",
     category: "decor",
-    price: 18500,
-    originalPrice: 24000,
     rating: 4.9,
     reviewsCount: 86,
     badge: "Set of 2",
     description: "Pair of organic guitar-pick shaped side tables with solid teak hardwood tops, matte black steel stems, and heavy stable pedestal bases designed to tuck under sofa edges.",
     dimensions: "16\"W x 14\"D x 23\"H each",
     materials: "Solid Teak Top with Clear Protective Oil, Powder-Coated Steel Pedestal",
-    leadTime: "In Stock - Ships today across India",
+    leadTime: "Crafted in Kirti Nagar Workshop",
+    tags: ["side table", "drink table", "teak", "accent table", "living room", "pedestal"],
     images: [
       "images/product-7.jpg",
       "images/product-8.jpg",
@@ -260,6 +250,128 @@ const PRODUCTS = [
     ],
     colors: [
       { name: "Warm Teak & Black", hex: "#8c542a", bgImage: "images/product-7.jpg" }
+    ]
+  },
+  // NEW PRODUCTS (Using Real Photos Provided by Client & Rich Search Tags)
+  {
+    id: 12,
+    name: "Royal Curved Fluted Round Velvet Bed",
+    category: "bedroom",
+    rating: 5.0,
+    reviewsCount: 47,
+    badge: "Signature Commission",
+    description: "A monumental centerpiece round luxury bed featuring a circular upholstered platform foundation, an enveloping curved wall-height vertical fluted velvet headboard panel, and architectural arched display niches.",
+    dimensions: "84\" Diameter Round Base x 7'H Headboard (Bespoke Sizing)",
+    materials: "Kiln-Dried Hardwood Core, Premium Burgundy Velvet Upholstery, High-Density Reflex Core, Acoustic Wall Panelling",
+    leadTime: "Bespoke Made to Order in Kirti Nagar Studio",
+    tags: ["bed", "round bed", "luxury bed", "bedroom", "velvet bed", "fluted headboard", "platform bed"],
+    images: [
+      "images/real-round-bed.jpg",
+      "images/real-bedroom-bed.jpg"
+    ],
+    colors: [
+      { name: "Burgundy Velvet", hex: "#6d1d24", bgImage: "images/real-round-bed.jpg" },
+      { name: "Champagne Cream", hex: "#e5ded4", bgImage: "images/real-bedroom-bed.jpg" }
+    ]
+  },
+  {
+    id: 13,
+    name: "Grand Haven Master Bed & Chaise Suite",
+    category: "bedroom",
+    rating: 4.9,
+    reviewsCount: 63,
+    badge: "Masterpiece Suite",
+    description: "Complete architectural master bedroom sanctuary featuring an upholstered king-size platform bed with fluted brass-inlay wall cladding, twin integrated soft-closing nightstands, and a sculptural curved cream lounge chaise.",
+    dimensions: "King Bed (78\"W x 84\"L) with 11' Extended Acoustic Panelling",
+    materials: "Solid Teak Internal Framing, Italian Cashmere Velvet & Bouclé, Brushed Champagne Gold Inlays",
+    leadTime: "Custom Site-Measured & Built in Studio",
+    tags: ["bed", "master bed", "bedroom suite", "king bed", "headboard", "chaise lounge", "bedroom"],
+    images: [
+      "images/real-bedroom-bed.jpg",
+      "images/real-round-bed.jpg"
+    ],
+    colors: [
+      { name: "Cashmere Cream & Olive", hex: "#5a594f", bgImage: "images/real-bedroom-bed.jpg" }
+    ]
+  },
+  {
+    id: 14,
+    name: "Bespoke Architectural Wardrobe & Console Suite",
+    category: "bedroom",
+    rating: 5.0,
+    reviewsCount: 88,
+    badge: "Custom Built-In",
+    description: "Full-height floor-to-ceiling bespoke modular wardrobe crafted with flush soft-closing doors, custom elongated brushed stainless steel bar handles, central recessed TV media console nook, and 6 soft-close deep drawers.",
+    dimensions: "12'W x 9'H x 24\"D (Tailored to your exact room height & width)",
+    materials: "Marine-Grade HDHMR Core, Scratch-Resistant Warm Taupe Acrylic Laminate, Natural Oak Woodgrain Inlay, Blum/Hettich Soft-Close Hardware",
+    leadTime: "Custom Manufactured & Installed by Studio Artisans",
+    tags: ["wardrobe", "almirah", "closet", "cupboard", "bedroom storage", "tv unit", "bedroom", "drawers"],
+    images: [
+      "images/real-wardrobe.jpg",
+      "images/real-tv-console.jpg"
+    ],
+    colors: [
+      { name: "Warm Taupe & Natural Oak", hex: "#9b8d82", bgImage: "images/real-wardrobe.jpg" }
+    ]
+  },
+  {
+    id: 15,
+    name: "Aura Fluted Wall Media & TV Console Unit",
+    category: "living",
+    rating: 4.9,
+    reviewsCount: 71,
+    badge: "Media Architecture",
+    description: "Architectural wall-mounted floating TV entertainment console finished in satin white lacquer and marble-look countertop, complemented by vertical fluted back wall panelling and integrated subwoofer/amplifier compartments.",
+    dimensions: "8'W x 18\"D x 18\"H with 8' Fluted Back Cladding",
+    materials: "High-Density Core, Italian Polyurethane Satin Lacquer, Calacatta Composite Stone, Acoustic Fluting",
+    leadTime: "Studio Handcrafted & Custom Installed",
+    tags: ["tv console", "tv unit", "media console", "entertainment unit", "living room", "credenza", "fluted"],
+    images: [
+      "images/real-tv-console.jpg",
+      "images/product-3.jpg"
+    ],
+    colors: [
+      { name: "Satin White & Cream Fluting", hex: "#f5f3ee", bgImage: "images/real-tv-console.jpg" }
+    ]
+  },
+  {
+    id: 16,
+    name: "Sacred Sanctum Handcrafted Teak Mandir / Pooja Unit",
+    category: "decor",
+    rating: 5.0,
+    reviewsCount: 96,
+    badge: "Handcrafted Sacred",
+    description: "Contemporary architectural Pooja mandir crafted in solid teak wood with delicate brass lattice jali, hanging brass temple bells, pull-out brass prayer tray, drawer storage for sacred articles, and warm concealed ambient lighting.",
+    dimensions: "42\"W x 20\"D x 68\"H (Custom sizing available)",
+    materials: "Grade-A Natural Kiln-Dried Teak Wood, Solid Brass Inlays & Hardware, Concealed 3000K Warm LED",
+    leadTime: "Handcrafted with Reverence in Kirti Nagar Studio",
+    tags: ["pooja unit", "mandir", "temple", "pooja mandir", "pooja cabinet", "prayer unit", "sacred", "decor"],
+    images: [
+      "images/product-1.jpg",
+      "images/product-3.jpg"
+    ],
+    colors: [
+      { name: "Sacred Teak & Brass", hex: "#633c22", bgImage: "images/product-1.jpg" }
+    ]
+  },
+  {
+    id: 17,
+    name: "Curved Artisan Lounge Chaise Chair",
+    category: "decor",
+    rating: 4.9,
+    reviewsCount: 54,
+    badge: "Artisan Handcrafted",
+    description: "Sculptural organic curved chaise lounge chair in cashmere cream upholstery. Built with sweeping ergonomic contours for cozy reading and relaxed bedroom or living room styling.",
+    dimensions: "64\"W x 34\"D x 28\"H",
+    materials: "Curved Solid Hardwood Shell, Cashmere Cream Performance Fabric, High-Density Reflex Core",
+    leadTime: "Master Handcrafted in Kirti Nagar",
+    tags: ["artisan chair", "chair", "chaise lounge", "curved chair", "accent chair", "lounge", "bedroom"],
+    images: [
+      "images/real-bedroom-bed.jpg",
+      "images/product-9.jpg"
+    ],
+    colors: [
+      { name: "Cashmere Cream", hex: "#f0ece3", bgImage: "images/real-bedroom-bed.jpg" }
     ]
   }
 ];
@@ -271,8 +383,6 @@ let state = {
   currentCategory: 'all',
   currentSort: 'popular',
   searchQuery: '',
-  discountPercent: 0,
-  discountCode: '',
   quickViewProduct: null,
   quickViewSelectedColor: null,
   quickViewQty: 1
@@ -284,11 +394,24 @@ document.addEventListener('DOMContentLoaded', () => {
   updateCartUI();
   updateWishlistCount();
   setupEventListeners();
-  initCountdownTimer();
   setupCustomizerInteractive();
   lucide.createIcons();
-  initAutoInquiryPopup(5000);
+  initAutoInquiryPopup(6000);
 });
+
+// Helper for Search Modal Popular Chips
+window.setSearchFilter = function(term) {
+  state.searchQuery = term.toLowerCase().trim();
+  const searchModal = document.getElementById('search-modal');
+  if (searchModal) searchModal.classList.add('hidden');
+  
+  const searchInputs = document.querySelectorAll('.search-input-field');
+  searchInputs.forEach(i => i.value = term);
+
+  renderProducts();
+  const coll = document.getElementById('collection');
+  if (coll) coll.scrollIntoView({ behavior: 'smooth' });
+};
 
 // 4. EVENT LISTENERS
 function setupEventListeners() {
@@ -402,7 +525,7 @@ function setupEventListeners() {
     });
   }
 
-  // Checkout Modal
+  // Checkout / Quotation Modal
   const checkoutModal = document.getElementById('checkout-modal');
   const checkoutBtn = document.getElementById('checkout-proceed-btn');
   const checkoutCloseBtn = document.getElementById('checkout-close-btn');
@@ -410,7 +533,7 @@ function setupEventListeners() {
   if (checkoutBtn) {
     checkoutBtn.addEventListener('click', () => {
       if (state.cart.length === 0) {
-        showToast("Your cart is empty!", "info");
+        showToast("Your selection list is empty!", "info");
         return;
       }
       closeCart();
@@ -430,35 +553,12 @@ function setupEventListeners() {
   if (checkoutForm) {
     checkoutForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      // Animate success
       checkoutModal.classList.add('hidden');
       showOrderSuccessModal();
       // Clear cart
       state.cart = [];
       saveCart();
       updateCartUI();
-    });
-  }
-
-  // Coupon apply
-  const applyCouponBtn = document.getElementById('apply-coupon-btn');
-  const couponInput = document.getElementById('coupon-input');
-  if (applyCouponBtn && couponInput) {
-    applyCouponBtn.addEventListener('click', () => {
-      const code = couponInput.value.trim().toUpperCase();
-      if (code === 'LIVAURA15' || code === 'AURA15' || code === 'OAK15' || code === 'LUXE15') {
-        state.discountPercent = 15;
-        state.discountCode = code;
-        showToast("15% LIVAURA Promo Code Applied!", "success");
-        updateCartUI();
-      } else if (code === 'WELCOME10') {
-        state.discountPercent = 10;
-        state.discountCode = code;
-        showToast("10% Welcome Discount Applied!", "success");
-        updateCartUI();
-      } else {
-        showToast("Invalid code. Try 'LIVAURA15' or 'WELCOME10'", "error");
-      }
     });
   }
 
@@ -495,7 +595,7 @@ function setupEventListeners() {
       e.preventDefault();
       const emailInput = newsletterForm.querySelector('input[type="email"]');
       if (emailInput && emailInput.value) {
-        showToast("Thank you for joining Livaura! Use code LIVAURA15 for 15% off.", "success");
+        showToast("Thank you for joining The Livaura Studio Circle! We will be in touch shortly.", "success");
         emailInput.value = '';
       }
     });
@@ -514,45 +614,44 @@ function setupEventListeners() {
     inquiryForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const name = document.getElementById('inquiry-name')?.value || 'Client';
-      const topic = document.getElementById('inquiry-topic')?.value || 'Inquiry';
       const refId = `INQ-${Math.floor(10000 + Math.random() * 90000)}`;
 
       closeInquiryModal();
-      showToast(`Thank you, ${name}! Your inquiry (${refId}) has been received. Our concierge will contact you shortly.`, "success");
+      showToast(`Thank you, ${name}! Your inquiry (${refId}) has been received. Our Kirti Nagar studio team will contact you shortly.`, "success");
       inquiryForm.reset();
     });
   }
 }
 
-// 5. PRODUCT RENDERING & FILTERING
+// 5. PRODUCT RENDERING & FILTERING (NO PRICES SHOWN)
 function renderProducts() {
   const grid = document.getElementById('products-grid');
   const countBadge = document.getElementById('product-count-badge');
   if (!grid) return;
 
+  const q = state.searchQuery;
   let filtered = PRODUCTS.filter(p => {
     const matchesCat = state.currentCategory === 'all' || p.category === state.currentCategory;
-    const matchesSearch = !state.searchQuery || 
-      p.name.toLowerCase().includes(state.searchQuery) ||
-      p.description.toLowerCase().includes(state.searchQuery) ||
-      p.materials.toLowerCase().includes(state.searchQuery);
+    const matchesSearch = !q || 
+      p.name.toLowerCase().includes(q) ||
+      p.description.toLowerCase().includes(q) ||
+      p.materials.toLowerCase().includes(q) ||
+      (p.tags && p.tags.some(t => t.toLowerCase().includes(q)));
     return matchesCat && matchesSearch;
   });
 
   // Sorting
-  if (state.currentSort === 'price-asc') {
-    filtered.sort((a, b) => a.price - b.price);
-  } else if (state.currentSort === 'price-desc') {
-    filtered.sort((a, b) => b.price - a.price);
-  } else if (state.currentSort === 'rating') {
+  if (state.currentSort === 'rating') {
     filtered.sort((a, b) => b.rating - a.rating);
+  } else if (state.currentSort === 'alpha') {
+    filtered.sort((a, b) => a.name.localeCompare(b.name));
   } else {
     // popular (default)
     filtered.sort((a, b) => b.reviewsCount - a.reviewsCount);
   }
 
   if (countBadge) {
-    countBadge.textContent = `${filtered.length} piece${filtered.length === 1 ? '' : 's'} found`;
+    countBadge.textContent = `${filtered.length} piece${filtered.length === 1 ? '' : 's'} available`;
   }
 
   if (filtered.length === 0) {
@@ -560,7 +659,7 @@ function renderProducts() {
       <div class="col-span-full py-16 text-center">
         <i data-lucide="package-search" class="w-16 h-16 mx-auto text-stone-300 stroke-[1.2] mb-4"></i>
         <h3 class="text-xl font-serif text-stone-800 font-medium">No matching furniture pieces</h3>
-        <p class="text-stone-500 text-sm mt-1">Try adjusting your filters or search keywords.</p>
+        <p class="text-stone-500 text-sm mt-1">Try keywords like 'wardrobe', 'bed', 'pooja unit', 'curved sofa', or 'credenza'.</p>
         <button onclick="resetFilters()" class="mt-4 px-5 py-2.5 bg-stone-900 text-white text-xs uppercase tracking-widest rounded-full hover:bg-stone-800 transition">
           Clear Filters
         </button>
@@ -572,8 +671,6 @@ function renderProducts() {
 
   grid.innerHTML = filtered.map(product => {
     const isWishlisted = state.wishlist.includes(product.id);
-    const hasDiscount = product.originalPrice && product.originalPrice > product.price;
-    const discountAmount = hasDiscount ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100) : 0;
 
     return `
       <div class="group flex flex-col bg-white rounded-2xl overflow-hidden border border-stone-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300 relative" data-product-id="${product.id}">
@@ -593,11 +690,6 @@ function renderProducts() {
             ${product.badge ? `
               <span class="px-2.5 py-1 text-[11px] font-medium tracking-wide uppercase bg-stone-900/90 text-white backdrop-blur-md rounded-md shadow-sm">
                 ${product.badge}
-              </span>
-            ` : ''}
-            ${hasDiscount ? `
-              <span class="px-2.5 py-1 text-[11px] font-medium tracking-wide uppercase bg-amber-700 text-white rounded-md shadow-sm">
-                -${discountAmount}%
               </span>
             ` : ''}
           </div>
@@ -623,14 +715,21 @@ function renderProducts() {
             </button>
           </div>
 
-          <!-- Quick Add to Cart Hover Overlay -->
-          <div class="absolute inset-x-3 bottom-3 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+          <!-- Quick Inquire / Add Hover Overlay -->
+          <div class="absolute inset-x-3 bottom-3 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 flex gap-2">
+            <button 
+              onclick="event.stopPropagation(); openInquiryModal('${product.name}')"
+              class="flex-1 py-2 px-3 bg-stone-900/95 hover:bg-black text-white text-[11px] font-medium tracking-wider uppercase rounded-xl backdrop-blur-md shadow-lg flex items-center justify-center gap-1.5 transition"
+            >
+              <i data-lucide="message-square" class="w-3.5 h-3.5 text-amber-400"></i>
+              Inquire
+            </button>
             <button 
               onclick="event.stopPropagation(); quickAddToCart(${product.id})"
-              class="w-full py-2.5 px-4 bg-stone-900/95 hover:bg-black text-white text-xs font-medium tracking-wider uppercase rounded-xl backdrop-blur-md shadow-lg flex items-center justify-center gap-2 transition"
+              class="py-2 px-3 bg-white/95 hover:bg-white text-stone-900 text-[11px] font-medium tracking-wider uppercase rounded-xl backdrop-blur-md shadow-lg flex items-center justify-center gap-1 transition"
+              title="Add to selection list"
             >
-              <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i>
-              Quick Add
+              <i data-lucide="plus" class="w-3.5 h-3.5"></i>
             </button>
           </div>
         </div>
@@ -660,7 +759,7 @@ function renderProducts() {
             <p class="text-[10px] sm:text-xs text-stone-500 mt-0.5 line-clamp-1">${product.materials}</p>
           </div>
 
-          <!-- Swatches & Price Bottom -->
+          <!-- Swatches & Price on Request Bottom -->
           <div class="mt-3 sm:mt-4 pt-2.5 sm:pt-3 border-t border-stone-100 flex items-center justify-between gap-1.5">
             <!-- Swatches -->
             <div class="flex items-center gap-1 sm:gap-1.5">
@@ -674,23 +773,15 @@ function renderProducts() {
               `).join('')}
             </div>
 
-            <!-- Price & Mobile Quick Add -->
+            <!-- Price on Request & Inquire Action (NO NUMERICAL PRICES) -->
             <div class="flex items-center gap-1.5">
-              <div class="text-right">
-                ${product.originalPrice ? `
-                  <span class="text-[10px] sm:text-xs text-stone-400 line-through mr-1">${formatINR(product.originalPrice)}</span>
-                ` : ''}
-                <span class="text-xs sm:text-base font-semibold text-stone-900 font-mono">${formatINR(product.price)}</span>
-              </div>
-
-              <!-- 1-Tap Mobile Quick Add Button -->
+              <span class="text-[10px] sm:text-[11px] font-semibold text-stone-700 bg-stone-100 px-2 py-0.5 rounded border border-stone-200">Price on Request</span>
               <button 
-                onclick="event.stopPropagation(); quickAddToCart(${product.id})"
-                class="sm:hidden w-7 h-7 rounded-lg bg-stone-900 text-white flex items-center justify-center active:scale-90 transition shadow-sm ml-1"
-                title="Add to bag"
-                aria-label="Add ${product.name} to bag"
+                onclick="event.stopPropagation(); openInquiryModal('${product.name}')"
+                class="px-2.5 py-1 bg-stone-900 hover:bg-stone-800 text-white rounded-lg text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider transition"
+                title="Inquire about ${product.name}"
               >
-                <i data-lucide="plus" class="w-4 h-4"></i>
+                Inquire
               </button>
             </div>
           </div>
@@ -707,7 +798,6 @@ function switchCardColor(productId, imgUrl, buttonEl) {
   if (img && imgUrl) {
     img.src = imgUrl;
   }
-  // update active ring
   const parent = buttonEl.parentElement;
   parent.querySelectorAll('button').forEach(b => b.classList.remove('ring-2', 'ring-stone-800'));
   buttonEl.classList.add('ring-2', 'ring-stone-800');
@@ -730,7 +820,7 @@ function resetFilters() {
   renderProducts();
 }
 
-// 6. QUICK VIEW MODAL
+// 6. QUICK VIEW MODAL (NO PRICES SHOWN)
 function openQuickView(productId) {
   const product = PRODUCTS.find(p => p.id === productId);
   if (!product) return;
@@ -741,8 +831,6 @@ function openQuickView(productId) {
 
   const modal = document.getElementById('quick-view-modal');
   const container = document.getElementById('quick-view-content');
-
-  const hasDiscount = product.originalPrice && product.originalPrice > product.price;
 
   container.innerHTML = `
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
@@ -777,12 +865,9 @@ function openQuickView(productId) {
           </div>
           <h2 class="font-serif text-2xl lg:text-3xl font-bold text-stone-900">${product.name}</h2>
           
-          <div class="mt-3 flex items-baseline gap-3">
-            <span class="text-2xl font-serif font-bold text-stone-900">${formatINR(product.price)}</span>
-            ${hasDiscount ? `
-              <span class="text-base text-stone-400 line-through">${formatINR(product.originalPrice)}</span>
-              <span class="text-xs font-semibold px-2 py-0.5 bg-rose-100 text-rose-800 rounded">Save ${formatINR(product.originalPrice - product.price)}</span>
-            ` : ''}
+          <div class="mt-3 flex items-center gap-3">
+            <span class="text-base font-semibold text-stone-900 bg-stone-100 px-3 py-1.5 rounded-lg border border-stone-200">Price on Request</span>
+            <span class="text-xs text-stone-500">Custom Dimensions & Finishes Available</span>
           </div>
         </div>
 
@@ -792,7 +877,7 @@ function openQuickView(productId) {
         <div class="bg-stone-50 rounded-xl p-3.5 space-y-2 border border-stone-200/60 text-xs">
           <div class="flex justify-between"><span class="text-stone-400">Dimensions:</span> <span class="font-medium text-stone-800">${product.dimensions}</span></div>
           <div class="flex justify-between"><span class="text-stone-400">Materials:</span> <span class="font-medium text-stone-800">${product.materials}</span></div>
-          <div class="flex justify-between"><span class="text-stone-400">Availability:</span> <span class="font-medium text-emerald-700 flex items-center gap-1"><i data-lucide="check" class="w-3 h-3"></i> ${product.leadTime}</span></div>
+          <div class="flex justify-between"><span class="text-stone-400">Production:</span> <span class="font-medium text-emerald-700 flex items-center gap-1"><i data-lucide="check" class="w-3 h-3"></i> ${product.leadTime}</span></div>
         </div>
 
         <!-- Color Selection -->
@@ -813,47 +898,40 @@ function openQuickView(productId) {
           </div>
         </div>
 
-        <!-- Quantity & Add to Cart -->
-        <div class="flex items-center gap-4 pt-2">
-          <!-- Quantity Stepper -->
-          <div class="flex items-center border border-stone-300 rounded-xl bg-white">
-            <button onclick="decrementQvQty()" class="px-3 py-2 text-stone-500 hover:text-stone-900 transition">-</button>
-            <span id="qv-qty-label" class="px-3 text-sm font-semibold w-8 text-center">1</span>
-            <button onclick="incrementQvQty()" class="px-3 py-2 text-stone-500 hover:text-stone-900 transition">+</button>
-          </div>
-
-          <!-- Add Button -->
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+          <!-- Request Price Button -->
           <button 
-            onclick="addQvToCart()"
+            onclick="openInquiryModal('${product.name}'); document.getElementById('quick-view-modal').classList.add('hidden');"
             class="flex-1 py-3 px-6 bg-stone-900 hover:bg-stone-800 text-white rounded-xl text-xs uppercase tracking-widest font-semibold flex items-center justify-center gap-2 shadow-lg transition"
           >
-            <i data-lucide="shopping-bag" class="w-4 h-4"></i>
-            Add to Bag • <span id="qv-total-price">${formatINR(product.price)}</span>
+            <i data-lucide="message-square" class="w-4 h-4 text-amber-400"></i>
+            Request Price & Consultation
+          </button>
+
+          <!-- Add to Selection List -->
+          <button 
+            onclick="addQvToCart()"
+            class="py-3 px-5 bg-stone-100 hover:bg-stone-200 text-stone-900 border border-stone-300 rounded-xl text-xs uppercase tracking-widest font-semibold flex items-center justify-center gap-2 transition"
+          >
+            <i data-lucide="plus" class="w-4 h-4"></i>
+            Add to Selection
           </button>
         </div>
 
-        <!-- Inquire about this piece -->
-        <button 
-          onclick="openInquiryModal('${product.name}'); document.getElementById('quick-view-modal').classList.add('hidden');"
-          class="w-full py-2.5 px-4 bg-stone-100 hover:bg-stone-200 text-stone-800 rounded-xl text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 border border-stone-200 transition"
-        >
-          <i data-lucide="message-square" class="w-3.5 h-3.5 text-stone-600"></i>
-          Inquire / Request Custom Dimensions
-        </button>
-
-        <!-- Guarantees -->
+        <!-- Studio Pillars -->
         <div class="grid grid-cols-3 gap-2 pt-2 border-t border-stone-100 text-[11px] text-stone-500 text-center">
           <div class="flex flex-col items-center gap-1">
-            <i data-lucide="truck" class="w-4 h-4 text-stone-700"></i>
-            <span>White-Glove Delivery</span>
+            <i data-lucide="award" class="w-4 h-4 text-amber-700"></i>
+            <span>30+ Years Trust</span>
           </div>
           <div class="flex flex-col items-center gap-1">
-            <i data-lucide="shield-check" class="w-4 h-4 text-stone-700"></i>
-            <span>10-Year Warranty</span>
+            <i data-lucide="sparkles" class="w-4 h-4 text-stone-700"></i>
+            <span>Bespoke Sizing</span>
           </div>
           <div class="flex flex-col items-center gap-1">
-            <i data-lucide="rotate-ccw" class="w-4 h-4 text-stone-700"></i>
-            <span>30-Day Home Trial</span>
+            <i data-lucide="map-pin" class="w-4 h-4 text-stone-700"></i>
+            <span>Kirti Nagar Studio</span>
           </div>
         </div>
       </div>
@@ -875,7 +953,6 @@ function selectQvColor(index) {
   const mainImg = document.getElementById('qv-main-image');
   if (mainImg && col.bgImage) mainImg.src = col.bgImage;
 
-  // rings
   state.quickViewProduct.colors.forEach((_, i) => {
     const sw = document.getElementById(`qv-color-swatch-${i}`);
     if (sw) {
@@ -888,38 +965,17 @@ function selectQvColor(index) {
   });
 }
 
-function incrementQvQty() {
-  state.quickViewQty++;
-  updateQvQtyUI();
-}
-
-function decrementQvQty() {
-  if (state.quickViewQty > 1) {
-    state.quickViewQty--;
-    updateQvQtyUI();
-  }
-}
-
-function updateQvQtyUI() {
-  const lbl = document.getElementById('qv-qty-label');
-  const prc = document.getElementById('qv-total-price');
-  if (lbl) lbl.textContent = state.quickViewQty;
-  if (prc && state.quickViewProduct) {
-    prc.textContent = formatINR(state.quickViewProduct.price * state.quickViewQty);
-  }
-}
-
 function addQvToCart() {
   if (!state.quickViewProduct) return;
   addToCart(
     state.quickViewProduct.id, 
     state.quickViewSelectedColor ? state.quickViewSelectedColor.name : state.quickViewProduct.colors[0].name,
-    state.quickViewQty
+    1
   );
   document.getElementById('quick-view-modal').classList.add('hidden');
 }
 
-// 7. CART MANAGEMENT
+// 7. SELECTION / INQUIRY BAG MANAGEMENT
 function quickAddToCart(productId) {
   const product = PRODUCTS.find(p => p.id === productId);
   if (!product) return;
@@ -941,7 +997,6 @@ function addToCart(productId, colorName, quantity = 1) {
     state.cart.push({
       id: product.id,
       name: product.name,
-      price: product.price,
       image: product.images[0],
       selectedColor: colorName,
       quantity: quantity
@@ -950,7 +1005,7 @@ function addToCart(productId, colorName, quantity = 1) {
 
   saveCart();
   updateCartUI();
-  showToast(`Added "${product.name}" to your cart!`, "success");
+  showToast(`Added "${product.name}" to your selection!`, "success");
 
   // Animate cart button
   document.querySelectorAll('.cart-toggle-btn').forEach(b => {
@@ -975,7 +1030,7 @@ function removeCartItem(index) {
   state.cart.splice(index, 1);
   saveCart();
   updateCartUI();
-  showToast(`Removed "${removedName}" from cart`, "info");
+  showToast(`Removed "${removedName}" from selection`, "info");
 }
 
 function saveCart() {
@@ -997,13 +1052,11 @@ function updateCartUI() {
   const cartList = document.getElementById('cart-items-container');
   const cartFooter = document.getElementById('cart-footer');
   const emptyCartState = document.getElementById('cart-empty-state');
-  const cartSubtotalEl = document.getElementById('cart-subtotal');
-  const cartDiscountRow = document.getElementById('cart-discount-row');
-  const cartDiscountAmountEl = document.getElementById('cart-discount-amount');
-  const cartShippingEl = document.getElementById('cart-shipping');
-  const cartTotalEl = document.getElementById('cart-total');
-  const shippingProgressText = document.getElementById('shipping-progress-text');
-  const shippingProgressBar = document.getElementById('shipping-progress-bar');
+  const piecesCountEl = document.getElementById('co-pieces-count');
+
+  if (piecesCountEl) {
+    piecesCountEl.textContent = `${totalCount} piece${totalCount === 1 ? '' : 's'}`;
+  }
 
   if (!cartList) return;
 
@@ -1017,12 +1070,7 @@ function updateCartUI() {
   if (emptyCartState) emptyCartState.classList.add('hidden');
   if (cartFooter) cartFooter.classList.remove('hidden');
 
-  let subtotal = 0;
-
   cartList.innerHTML = state.cart.map((item, index) => {
-    const itemTotal = item.price * item.quantity;
-    subtotal += itemTotal;
-
     return `
       <div class="flex items-center gap-4 py-4 border-b border-stone-100 last:border-none">
         <img src="${item.image}" alt="${item.name}" class="w-16 h-16 rounded-xl object-cover bg-stone-100 flex-shrink-0 border border-stone-200/80" />
@@ -1035,7 +1083,7 @@ function updateCartUI() {
               <span class="px-2 text-xs font-semibold">${item.quantity}</span>
               <button onclick="updateCartQuantity(${index}, 1)" class="px-2 py-0.5 text-stone-600 hover:text-stone-900 text-xs">+</button>
             </div>
-            <span class="text-xs font-semibold text-stone-900 font-mono">${formatINR(itemTotal)}</span>
+            <span class="text-[11px] font-semibold text-stone-700 bg-stone-100 px-2 py-0.5 rounded border border-stone-200">Price on Request</span>
           </div>
         </div>
         <button onclick="removeCartItem(${index})" class="text-stone-400 hover:text-rose-500 p-1 transition" title="Remove item">
@@ -1044,47 +1092,6 @@ function updateCartUI() {
       </div>
     `;
   }).join('');
-
-  // Shipping progress (₹50,000 threshold for free white-glove delivery across India)
-  const freeShippingThreshold = 50000;
-  if (subtotal >= freeShippingThreshold) {
-    if (shippingProgressText) {
-      shippingProgressText.innerHTML = `<span class="text-emerald-700 font-semibold flex items-center gap-1.5"><i data-lucide="sparkles" class="w-3.5 h-3.5"></i> You've earned FREE White-Glove Delivery across India!</span>`;
-    }
-    if (shippingProgressBar) {
-      shippingProgressBar.style.width = '100%';
-      shippingProgressBar.classList.add('bg-emerald-600');
-      shippingProgressBar.classList.remove('bg-amber-600');
-    }
-  } else {
-    const diff = freeShippingThreshold - subtotal;
-    if (shippingProgressText) {
-      shippingProgressText.innerHTML = `Add <span class="font-bold text-stone-900">${formatINR(diff)}</span> more for <span class="font-medium text-stone-800">FREE White-Glove Delivery</span>`;
-    }
-    if (shippingProgressBar) {
-      const pct = Math.min(100, Math.round((subtotal / freeShippingThreshold) * 100));
-      shippingProgressBar.style.width = `${pct}%`;
-      shippingProgressBar.classList.remove('bg-emerald-600');
-      shippingProgressBar.classList.add('bg-stone-800');
-    }
-  }
-
-  // Totals calculations
-  let discountAmount = 0;
-  if (state.discountPercent > 0) {
-    discountAmount = (subtotal * state.discountPercent) / 100;
-    if (cartDiscountRow) cartDiscountRow.classList.remove('hidden');
-    if (cartDiscountAmountEl) cartDiscountAmountEl.textContent = `-${formatINR(discountAmount)}`;
-  } else {
-    if (cartDiscountRow) cartDiscountRow.classList.add('hidden');
-  }
-
-  const shippingCost = subtotal >= freeShippingThreshold ? 0 : 1500;
-  const finalTotal = subtotal - discountAmount + shippingCost;
-
-  if (cartSubtotalEl) cartSubtotalEl.textContent = formatINR(subtotal);
-  if (cartShippingEl) cartShippingEl.textContent = shippingCost === 0 ? "FREE" : formatINR(shippingCost);
-  if (cartTotalEl) cartTotalEl.textContent = formatINR(finalTotal);
 
   lucide.createIcons();
 }
@@ -1105,7 +1112,7 @@ function toggleWishlist(productId) {
 
   localStorage.setItem('livaura_wishlist', JSON.stringify(state.wishlist));
   updateWishlistCount();
-  renderProducts(); // Refresh heart states
+  renderProducts();
 }
 
 function updateWishlistCount() {
@@ -1142,12 +1149,12 @@ function openWishlistModal() {
           <img src="${p.images[0]}" class="w-14 h-14 object-cover rounded-lg bg-stone-100" />
           <div>
             <h5 class="text-sm font-semibold text-stone-900">${p.name}</h5>
-            <span class="text-xs font-mono text-stone-600 font-semibold">${formatINR(p.price)}</span>
+            <span class="text-xs font-semibold text-stone-600">Price on Request</span>
           </div>
         </div>
         <div class="flex items-center gap-2">
           <button onclick="addToCart(${p.id}, '${p.colors[0].name}'); toggleWishlist(${p.id}); openWishlistModal();" class="px-3 py-1.5 bg-stone-900 text-white rounded-lg text-xs font-medium hover:bg-stone-800 transition">
-            Move to Cart
+            Add to Selection
           </button>
           <button onclick="toggleWishlist(${p.id}); openWishlistModal();" class="p-1.5 text-stone-400 hover:text-rose-500 transition">
             <i data-lucide="x" class="w-4 h-4"></i>
@@ -1169,13 +1176,12 @@ function closeWishlistModal() {
 // 8.5. BESPOKE INQUIRY & DESIGN CONCIERGE MODAL
 let autoInquiryTimer = null;
 
-function initAutoInquiryPopup(delayMs = 5000) {
+function initAutoInquiryPopup(delayMs = 6000) {
   autoInquiryTimer = setTimeout(() => {
     const inquiryModal = document.getElementById('inquiry-modal');
     const qvModal = document.getElementById('quick-view-modal');
     const checkoutModal = document.getElementById('checkout-modal');
 
-    // Check if another modal is active or if inquiry is already open
     const isAnotherModalOpen = 
       (qvModal && !qvModal.classList.contains('hidden')) ||
       (checkoutModal && !checkoutModal.classList.contains('hidden'));
@@ -1204,7 +1210,6 @@ function openInquiryModal(productName = '') {
   lucide.createIcons();
 
   setTimeout(() => {
-    // Only auto-focus on desktop to avoid intrusive keyboard zoom/popup on mobile
     if (window.innerWidth >= 768) {
       const nameInp = document.getElementById('inquiry-name');
       if (nameInp) nameInp.focus();
@@ -1226,21 +1231,11 @@ function closeInquiryModal() {
 
 // 9. CHECKOUT SUMMARY & ORDER FLOW
 function populateCheckoutSummary() {
-  const subtotal = state.cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-  const discountAmount = state.discountPercent > 0 ? (subtotal * state.discountPercent) / 100 : 0;
-  const shipping = subtotal >= 50000 ? 0 : 1500;
-  const tax = Math.round((subtotal - discountAmount) * 0.18);
-  const total = subtotal - discountAmount + shipping + tax;
-
-  const checkoutSubtotal = document.getElementById('co-subtotal');
-  const checkoutShipping = document.getElementById('co-shipping');
-  const checkoutTax = document.getElementById('co-tax');
-  const checkoutTotal = document.getElementById('co-total');
-
-  if (checkoutSubtotal) checkoutSubtotal.textContent = formatINR(subtotal);
-  if (checkoutShipping) checkoutShipping.textContent = shipping === 0 ? "FREE" : formatINR(shipping);
-  if (checkoutTax) checkoutTax.textContent = formatINR(tax);
-  if (checkoutTotal) checkoutTotal.textContent = formatINR(total);
+  const totalCount = state.cart.reduce((sum, item) => sum + item.quantity, 0);
+  const piecesCountEl = document.getElementById('co-pieces-count');
+  if (piecesCountEl) {
+    piecesCountEl.textContent = `${totalCount} item${totalCount === 1 ? '' : 's'}`;
+  }
 }
 
 function showOrderSuccessModal() {
@@ -1250,7 +1245,6 @@ function showOrderSuccessModal() {
   if (orderNumEl) orderNumEl.textContent = orderNumber;
   if (modal) modal.classList.remove('hidden');
 
-  // Trigger celebration confetti
   if (typeof confetti === 'function') {
     confetti({
       particleCount: 80,
@@ -1347,11 +1341,9 @@ function addCustomizedItemToCart() {
   const fabricInfo = CUSTOMIZER_DATA.fabrics[customizerState.fabric];
   const woodInfo = CUSTOMIZER_DATA.woodBases[customizerState.wood];
   
-  // Custom configuration as product
   state.cart.push({
     id: 999,
     name: "Aura Bespoke Studio Armchair",
-    price: 78000,
     image: fabricInfo.image,
     selectedColor: `${fabricInfo.name} / ${woodInfo.name} Base`,
     quantity: 1
@@ -1359,7 +1351,7 @@ function addCustomizedItemToCart() {
 
   saveCart();
   updateCartUI();
-  showToast("Bespoke Armchair added to your bag!", "success");
+  showToast("Bespoke Armchair added to your selection!", "success");
 
   // Open cart drawer
   const cartDrawer = document.getElementById('cart-drawer');
@@ -1371,43 +1363,18 @@ function addCustomizedItemToCart() {
   }
 }
 
-// 11. FLASH SALE COUNTDOWN TIMER
-function initCountdownTimer() {
-  // 36 hours from now
-  const targetDate = new Date();
-  targetDate.setHours(targetDate.getHours() + 38);
-  targetDate.setMinutes(targetDate.getMinutes() + 45);
-
-  const updateClock = () => {
-    const now = new Date().getTime();
-    const distance = targetDate.getTime() - now;
-
-    if (distance < 0) return;
-
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    const hEl = document.getElementById('sale-hours');
-    const mEl = document.getElementById('sale-minutes');
-    const sEl = document.getElementById('sale-seconds');
-
-    if (hEl) hEl.textContent = String(hours).padStart(2, '0');
-    if (mEl) mEl.textContent = String(minutes).padStart(2, '0');
-    if (sEl) sEl.textContent = String(seconds).padStart(2, '0');
-  };
-
-  updateClock();
-  setInterval(updateClock, 1000);
-}
-
-// 12. TOAST NOTIFICATIONS
+// 11. TOAST NOTIFICATIONS
 function showToast(message, type = 'info') {
-  const container = document.getElementById('toast-container');
-  if (!container) return;
+  let container = document.getElementById('toast-container');
+  if (!container) {
+    container = document.createElement('div');
+    container.id = 'toast-container';
+    container.className = 'fixed top-5 right-5 z-50 flex flex-col gap-2 pointer-events-none max-w-sm w-full';
+    document.body.appendChild(container);
+  }
 
   const toast = document.createElement('div');
-  toast.className = `flex items-center gap-3 px-4 py-3 rounded-xl shadow-xl text-xs font-medium text-white transition-all transform duration-300 translate-y-3 opacity-0 backdrop-blur-md ${
+  toast.className = `flex items-center gap-3 px-4 py-3 rounded-xl shadow-xl text-xs font-medium text-white transition-all transform duration-300 translate-y-3 opacity-0 backdrop-blur-md pointer-events-auto ${
     type === 'success' ? 'bg-stone-900/95 border border-emerald-500/40' :
     type === 'error' ? 'bg-rose-900/95 border border-rose-500/40' :
     'bg-stone-900/95 border border-stone-700'
