@@ -14,364 +14,477 @@ function formatINR(amount) {
 // 1. PRODUCTS DATA (BESPOKE CURATION - ALL PRICES ON REQUEST)
 const PRODUCTS = [
   {
-    id: 1,
-    name: "Aura Fluted Walnut Sideboard & Credenza",
-    category: "living",
-    rating: 4.9,
-    reviewsCount: 114,
-    badge: "Artisan Handcrafted",
-    description: "Masterpiece curved console credenza featuring premium hand-polished walnut with continuous vertical fluted accents, curved corner doors, and seamless soft-closing cabinetry.",
-    dimensions: "68\"W x 20\"D x 34\"H (Custom dimensions available)",
-    materials: "Solid Hardwood Frame, Fluted American Walnut Veneer, High-Luster Mirror Lacquer Finish",
-    leadTime: "Crafted in Kirti Nagar Studio - Available to Order",
-    tags: ["sideboard", "credenza", "buffet", "console", "walnut", "fluted", "storage", "living room"],
-    images: [
-      "images/product-1.jpg",
-      "images/product-3.jpg",
-      "images/product-2.jpg"
+    "id": 1,
+    "name": "Aura Fluted Walnut Sideboard & Credenza",
+    "category": "living",
+    "rating": 4.9,
+    "reviewsCount": 114,
+    "badge": "Artisan Handcrafted",
+    "description": "Masterpiece curved console credenza featuring premium hand-polished walnut with continuous vertical fluted accents, curved corner doors, and seamless soft-closing cabinetry.",
+    "dimensions": "68\"W x 20\"D x 34\"H (Custom dimensions available)",
+    "materials": "Solid Hardwood Frame, Fluted American Walnut Veneer, High-Luster Mirror Lacquer Finish",
+    "leadTime": "Crafted in Kirti Nagar Studio - Available to Order",
+    "tags": [
+      "sideboard",
+      "credenza",
+      "buffet",
+      "console",
+      "walnut",
+      "fluted",
+      "storage",
+      "living room"
     ],
-    colors: [
-      { name: "Polished Walnut", hex: "#633c22", bgImage: "images/product-1.jpg" },
-      { name: "Fluted Cream", hex: "#e7e0d3", bgImage: "images/product-2.jpg" }
-    ]
-  },
-  {
-    id: 2,
-    name: "Celeste Fluted Dresser & Vanity Console",
-    category: "bedroom",
-    rating: 4.8,
-    reviewsCount: 68,
-    badge: "Workshop Exclusive",
-    description: "Architectural fluted storage console with curved tambour side cupboards, three flush undermount central drawers, and satin brushed champagne gold perimeter trims.",
-    dimensions: "58\"W x 19\"D x 32\"H (Custom sizing available)",
-    materials: "Engineered Hardwood Core, Italian Polyurethane Matte Lacquer, Brushed Brass Inlay",
-    leadTime: "Artisan Crafted - Custom Made to Order",
-    tags: ["dresser", "vanity", "console", "bedroom", "drawers", "fluted", "storage", "wardrobe companion"],
-    images: [
-      "images/product-2.jpg",
-      "images/product-3.jpg",
-      "images/product-4.jpg"
-    ],
-    colors: [
-      { name: "Cashmere Cream", hex: "#e5ded4", bgImage: "images/product-2.jpg" },
-      { name: "Honed Walnut", hex: "#5c3d28", bgImage: "images/product-1.jpg" }
-    ]
-  },
-  {
-    id: 3,
-    name: "Palais Fluted Calacatta Marble Buffet",
-    category: "living",
-    rating: 5.0,
-    reviewsCount: 92,
-    badge: "Best Seller",
-    description: "Luxury curved credenza featuring an authentic honed white Calacatta marble slab, fine fluted ribbing across four doors, and bespoke cylindrical solid brass handles and legs.",
-    dimensions: "72\"W x 18\"D x 33\"H (Custom sizing available)",
-    materials: "Honed Calacatta Marble Slab, Fluted Ash Timber, Solid Brushed Satin Brass Hardware",
-    leadTime: "Studio Handcrafted in Kirti Nagar",
-    tags: ["marble", "buffet", "credenza", "dining", "sideboard", "calacatta", "brass", "living room"],
-    images: [
-      "images/product-3.jpg",
-      "images/product-4.jpg",
+    "images": [
       "images/product-1.jpg"
     ],
-    colors: [
-      { name: "Calacatta Sage White", hex: "#eceae5", bgImage: "images/product-3.jpg" },
-      { name: "Rich Walnut", hex: "#5c3d28", bgImage: "images/product-1.jpg" }
+    "colors": [
+      {
+        "name": "Polished Walnut",
+        "hex": "#633c22",
+        "bgImage": "images/product-1.jpg"
+      },
+      {
+        "name": "Natural Teak",
+        "hex": "#8a5a36",
+        "bgImage": "images/product-1.jpg"
+      }
     ]
   },
   {
-    id: 4,
-    name: "Sereno Curved Marble-Top Nightstand",
-    category: "bedroom",
-    rating: 4.9,
-    reviewsCount: 83,
-    badge: "Trending",
-    description: "Curved bedside table crowned with natural charcoal-veined marble. Includes dual silent soft-closing storage drawers with brushed antique brass bar hardware.",
-    dimensions: "22\"W x 18\"D x 24\"H",
-    materials: "Honed Natural Grey Marble, Lacquered Birchwood, Brushed Brass Hardware",
-    leadTime: "Studio Handcrafted in Kirti Nagar",
-    tags: ["nightstand", "bedside table", "bedroom", "marble", "curved", "side table", "bed companion"],
-    images: [
-      "images/product-4.jpg",
-      "images/product-3.jpg",
+    "id": 2,
+    "name": "Celeste Fluted Dresser & Vanity Console",
+    "category": "bedroom",
+    "rating": 4.8,
+    "reviewsCount": 68,
+    "badge": "Workshop Exclusive",
+    "description": "Architectural fluted storage console with curved tambour side cupboards, three flush undermount central drawers, and satin brushed champagne gold perimeter trims.",
+    "dimensions": "58\"W x 19\"D x 32\"H (Custom sizing available)",
+    "materials": "Engineered Hardwood Core, Italian Polyurethane Matte Lacquer, Brushed Brass Inlay",
+    "leadTime": "Artisan Crafted - Custom Made to Order",
+    "tags": [
+      "dresser",
+      "vanity",
+      "console",
+      "bedroom",
+      "drawers",
+      "fluted",
+      "storage",
+      "wardrobe companion"
+    ],
+    "images": [
       "images/product-2.jpg"
     ],
-    colors: [
-      { name: "Warm Alabaster", hex: "#f0ece1", bgImage: "images/product-4.jpg" },
-      { name: "Smoked Oak", hex: "#4a3b32", bgImage: "images/product-1.jpg" }
+    "colors": [
+      {
+        "name": "Cashmere Cream",
+        "hex": "#e5ded4",
+        "bgImage": "images/product-2.jpg"
+      },
+      {
+        "name": "Warm Alabaster",
+        "hex": "#f0ece1",
+        "bgImage": "images/product-2.jpg"
+      }
     ]
   },
   {
-    id: 5,
-    name: "Terra Curved Bouclé Loveseat",
-    category: "living",
-    rating: 4.9,
-    reviewsCount: 145,
-    badge: "Signature Design",
-    description: "Cocooning organic curves and tactile rust-terracotta textured bouclé fabric. Accompanied by trio of bespoke contrast velvet and linen throw pillows.",
-    dimensions: "74\"W x 38\"D x 31\"H (Custom length available)",
-    materials: "Italian Textured Terracotta Bouclé, Kiln-Dried Hardwood Frame, Down-Feel Core",
-    leadTime: "Custom Made to Order in 2-3 Weeks",
-    tags: ["sofa", "curved sofa", "loveseat", "bouclé", "living room", "terracotta", "lounge"],
-    images: [
-      "images/product-5.jpg",
-      "images/product-6.jpg",
-      "images/product-8.jpg"
+    "id": 3,
+    "name": "Palais Fluted Calacatta Marble Buffet",
+    "category": "living",
+    "rating": 5,
+    "reviewsCount": 92,
+    "badge": "Best Seller",
+    "description": "Luxury curved credenza featuring an authentic honed white Calacatta marble slab, fine fluted ribbing across four doors, and bespoke cylindrical solid brass handles and legs.",
+    "dimensions": "72\"W x 18\"D x 33\"H (Custom sizing available)",
+    "materials": "Honed Calacatta Marble Slab, Fluted Ash Timber, Solid Brushed Satin Brass Hardware",
+    "leadTime": "Studio Handcrafted in Kirti Nagar",
+    "tags": [
+      "marble",
+      "buffet",
+      "credenza",
+      "dining",
+      "sideboard",
+      "calacatta",
+      "brass",
+      "living room"
     ],
-    colors: [
-      { name: "Rust Terracotta", hex: "#b25838", bgImage: "images/product-5.jpg" },
-      { name: "Heather Grey", hex: "#a4a8ad", bgImage: "images/product-7.jpg" }
-    ]
-  },
-  {
-    id: 6,
-    name: "Terra Modular 2-Seater Architectural Sofa",
-    category: "living",
-    rating: 4.8,
-    reviewsCount: 77,
-    badge: "Studio Collection",
-    description: "Sculptured modern two-piece split seating sofa featuring continuous low-profile back contours, plush deep cushions, and tailored designer pillows.",
-    dimensions: "78\"W x 40\"D x 31\"H",
-    materials: "Heavyweight Rust Bouclé, High-Resilience High-Density Reflex Foam, Sinuous Spring Suspension",
-    leadTime: "Bespoke Workshop Production",
-    tags: ["sofa", "modular sofa", "curved sofa", "living room", "boucle", "seating"],
-    images: [
-      "images/product-6.jpg",
-      "images/product-5.jpg",
-      "images/product-8.jpg"
+    "images": [
+      "images/product-3.jpg"
     ],
-    colors: [
-      { name: "Rust Terracotta", hex: "#b25838", bgImage: "images/product-6.jpg" },
-      { name: "Ivory Bouclé", hex: "#f3f0e8", bgImage: "images/product-7.jpg" }
+    "colors": [
+      {
+        "name": "Calacatta White",
+        "hex": "#eceae5",
+        "bgImage": "images/product-3.jpg"
+      },
+      {
+        "name": "Champagne Brass",
+        "hex": "#d4af37",
+        "bgImage": "images/product-3.jpg"
+      }
     ]
   },
   {
-    id: 7,
-    name: "Grand Lounge Modular Sectional Suite",
-    category: "living",
-    rating: 5.0,
-    reviewsCount: 52,
-    badge: "Curated Suite",
-    description: "Expansive architect-designed modular sectional configuration with generous depth, plush back bolsters, integrated low-profile divider tray, and complimentary cocktail tables.",
-    dimensions: "142\"W x 112\"D x 30\"H (Configurable modules)",
-    materials: "Commercial-Grade Heather Grey Performance Weave, Kiln-Dried Teak Internal Framing, High-Density Down Core",
-    leadTime: "Custom Built in Kirti Nagar Studio",
-    tags: ["sofa", "sectional", "modular", "lounge", "living room", "curved sofa", "suite"],
-    images: [
-      "images/product-7.jpg",
-      "images/product-8.jpg",
-      "images/product-6.jpg"
+    "id": 4,
+    "name": "Sereno Curved Marble-Top Nightstand",
+    "category": "bedroom",
+    "rating": 4.9,
+    "reviewsCount": 83,
+    "badge": "Trending",
+    "description": "Curved bedside table crowned with natural charcoal-veined marble. Includes dual silent soft-closing storage drawers with brushed antique brass bar hardware.",
+    "dimensions": "22\"W x 18\"D x 24\"H (Bespoke sizing)",
+    "materials": "Honed Natural Grey Marble, Lacquered Birchwood, Brushed Brass Hardware",
+    "leadTime": "Studio Ready - Ships from Kirti Nagar Hub",
+    "tags": [
+      "nightstand",
+      "bedside",
+      "bedroom",
+      "marble",
+      "drawer",
+      "curved",
+      "bed companion"
     ],
-    colors: [
-      { name: "Heather Grey", hex: "#a8adb5", bgImage: "images/product-7.jpg" },
-      { name: "Terracotta Rust", hex: "#b25838", bgImage: "images/product-5.jpg" }
+    "images": [
+      "images/product-4.jpg"
+    ],
+    "colors": [
+      {
+        "name": "Warm Alabaster",
+        "hex": "#f0ece1",
+        "bgImage": "images/product-4.jpg"
+      },
+      {
+        "name": "Ivory Marble",
+        "hex": "#e8e4da",
+        "bgImage": "images/product-4.jpg"
+      }
     ]
   },
   {
-    id: 8,
-    name: "Elysian Curated Salon Living Ensemble",
-    category: "living",
-    rating: 4.9,
-    reviewsCount: 39,
-    badge: "Architectural",
-    description: "A masterfully balanced salon arrangement including twin curved terracotta bouclé sofas, high-back ergonomic lounge armchairs, and minimalist timber accent tables.",
-    dimensions: "Tailored layout for spaces 18'x14' and larger",
-    materials: "Italian Bouclé, Linen-Cotton Blends, Solid Walnut Accent Legs, High-Resiliency Foam",
-    leadTime: "Made to Order in Studio",
-    tags: ["ensemble", "living room", "salon", "sofa", "armchair", "curved sofa", "curated suite"],
-    images: [
-      "images/product-8.jpg",
-      "images/product-7.jpg",
+    "id": 5,
+    "name": "Terra Curved Bouclé Loveseat",
+    "category": "living",
+    "rating": 4.9,
+    "reviewsCount": 145,
+    "badge": "Signature Design",
+    "description": "Cocooning organic curves and tactile rust-terracotta textured bouclé fabric. Accompanied by trio of bespoke contrast velvet and linen throw pillows.",
+    "dimensions": "74\"W x 38\"D x 31\"H (Custom lengths available)",
+    "materials": "Italian Textured Terracotta Bouclé, Kiln-Dried Hardwood Frame, Down-Feel High-Resilience Core",
+    "leadTime": "Bespoke Studio Piece - Made to Order",
+    "tags": [
+      "sofa",
+      "loveseat",
+      "curved sofa",
+      "bouclé",
+      "terracotta",
+      "living room",
+      "seating"
+    ],
+    "images": [
       "images/product-5.jpg"
     ],
-    colors: [
-      { name: "Terracotta & Slate", hex: "#a3563b", bgImage: "images/product-8.jpg" }
+    "colors": [
+      {
+        "name": "Rust Terracotta",
+        "hex": "#b25838",
+        "bgImage": "images/product-5.jpg"
+      },
+      {
+        "name": "Warm Sand",
+        "hex": "#d2b59b",
+        "bgImage": "images/product-5.jpg"
+      }
     ]
   },
   {
-    id: 9,
-    name: "Royale Tufted Chesterfield Wingback Chair",
-    category: "living",
-    rating: 4.9,
-    reviewsCount: 118,
-    badge: "Workshop Handcrafted",
-    description: "Authentic workshop-crafted high-back wing chair featuring painstaking deep diamond button tufting, rolled scroll arms, thick box-edge spring cushion, and hand-carved cabriole walnut legs.",
-    dimensions: "34\"W x 35\"D x 44\"H",
-    materials: "Hand-Dyed Slate Teal Cotton-Linen Weave, Handcrafted Solid Walnut Frame, Coil-Spring Foundation",
-    leadTime: "Master Handcrafted in Kirti Nagar",
-    tags: ["chair", "artisan chair", "wingback", "chesterfield", "armchair", "tufted", "accent chair"],
-    images: [
-      "images/product-9.jpg",
-      "images/product-1.jpg",
-      "images/product-4.jpg"
+    "id": 6,
+    "name": "Terra Modular 2-Seater Architectural Sofa",
+    "category": "living",
+    "rating": 4.8,
+    "reviewsCount": 77,
+    "badge": "2026 Collection",
+    "description": "Sculptured modern two-piece split seating sofa featuring continuous rounded rear bolster back, tailored heavy-weave oat bouclé, and recessed invisible plinth base.",
+    "dimensions": "88\"W x 40\"D x 30\"H (Modular configurations available)",
+    "materials": "Textured Oat Bouclé, Kiln-Dried Solid Birch Frame, Sinuous Spring Support",
+    "leadTime": "Handcrafted in Kirti Nagar - 10-14 days",
+    "tags": [
+      "sofa",
+      "modular",
+      "2-seater",
+      "bouclé",
+      "living room",
+      "scandinavian",
+      "contemporary"
     ],
-    colors: [
-      { name: "Slate Teal Linen", hex: "#5b7782", bgImage: "images/product-9.jpg" },
-      { name: "Terracotta Bouclé", hex: "#b25838", bgImage: "images/product-5.jpg" }
-    ]
-  },
-  {
-    id: 10,
-    name: "Atelier Solid Espresso Storage Coffee Table",
-    category: "living",
-    rating: 4.8,
-    reviewsCount: 64,
-    badge: "Master Joinery",
-    description: "Monolithic low-profile coffee table in deep espresso finish, featuring dual open under-shelf display cubbies for art books and decorative bowls.",
-    dimensions: "48\"W x 26\"D x 16\"H",
-    materials: "Solid American Oak, Deep Espresso Protective Matte Stain, Concealed Glides",
-    leadTime: "Crafted in Kirti Nagar Workshop",
-    tags: ["coffee table", "table", "center table", "living room", "oak", "espresso"],
-    images: [
-      "images/product-7.jpg",
-      "images/product-8.jpg",
-      "images/product-1.jpg"
+    "images": [
+      "images/product-6.jpg"
     ],
-    colors: [
-      { name: "Espresso Oak", hex: "#2b211b", bgImage: "images/product-7.jpg" }
+    "colors": [
+      {
+        "name": "Oatmeal Bouclé",
+        "hex": "#ded7c8",
+        "bgImage": "images/product-6.jpg"
+      },
+      {
+        "name": "Pearl Cream",
+        "hex": "#f4ede1",
+        "bgImage": "images/product-6.jpg"
+      }
     ]
   },
   {
-    id: 11,
-    name: "Aura Cantilever Teak Drink Tables (Pair)",
-    category: "decor",
-    rating: 4.9,
-    reviewsCount: 86,
-    badge: "Set of 2",
-    description: "Pair of organic guitar-pick shaped side tables with solid teak hardwood tops, matte black steel stems, and heavy stable pedestal bases designed to tuck under sofa edges.",
-    dimensions: "16\"W x 14\"D x 23\"H each",
-    materials: "Solid Teak Top with Clear Protective Oil, Powder-Coated Steel Pedestal",
-    leadTime: "Crafted in Kirti Nagar Workshop",
-    tags: ["side table", "drink table", "teak", "accent table", "living room", "pedestal"],
-    images: [
-      "images/product-7.jpg",
-      "images/product-8.jpg",
-      "images/product-4.jpg"
+    "id": 7,
+    "name": "Grand Lounge Modular Sectional Suite",
+    "category": "living",
+    "rating": 5,
+    "reviewsCount": 184,
+    "badge": "Flagship Centerpiece",
+    "description": "Expansive 5-piece bespoke modular sectional with floating ottoman, deep-profile organic feather-wrapped seat cushions, and stain-resistant performance linen-chenille weave.",
+    "dimensions": "132\"W x 104\"D x 32\"H (Custom floor plans accommodated)",
+    "materials": "Performance Linen Chenille, Solid Kiln-Dried Hardwood Internal Skeleton, High-Density Feather Core",
+    "leadTime": "Bespoke Atelier Order - Handcrafted in Kirti Nagar",
+    "tags": [
+      "sectional",
+      "modular sofa",
+      "lounge suite",
+      "living room",
+      "large sofa",
+      "luxury sectional",
+      "curved"
     ],
-    colors: [
-      { name: "Warm Teak & Black", hex: "#8c542a", bgImage: "images/product-7.jpg" }
-    ]
-  },
-  // NEW PRODUCTS (Using Real Photos Provided by Client & Rich Search Tags)
-  {
-    id: 12,
-    name: "Royal Curved Fluted Round Velvet Bed",
-    category: "bedroom",
-    rating: 5.0,
-    reviewsCount: 47,
-    badge: "Signature Commission",
-    description: "A monumental centerpiece round luxury bed featuring a circular upholstered platform foundation, an enveloping curved wall-height vertical fluted velvet headboard panel, and architectural arched display niches.",
-    dimensions: "84\" Diameter Round Base x 7'H Headboard (Bespoke Sizing)",
-    materials: "Kiln-Dried Hardwood Core, Premium Burgundy Velvet Upholstery, High-Density Reflex Core, Acoustic Wall Panelling",
-    leadTime: "Bespoke Made to Order in Kirti Nagar Studio",
-    tags: ["bed", "round bed", "luxury bed", "bedroom", "velvet bed", "fluted headboard", "platform bed"],
-    images: [
-      "images/real-round-bed.jpg",
-      "images/real-bedroom-bed.jpg"
+    "images": [
+      "images/product-7.jpg"
     ],
-    colors: [
-      { name: "Burgundy Velvet", hex: "#6d1d24", bgImage: "images/real-round-bed.jpg" },
-      { name: "Champagne Cream", hex: "#e5ded4", bgImage: "images/real-bedroom-bed.jpg" }
+    "colors": [
+      {
+        "name": "Stone Grey",
+        "hex": "#a8a8a2",
+        "bgImage": "images/product-7.jpg"
+      },
+      {
+        "name": "Sand Taupe",
+        "hex": "#c5b8a5",
+        "bgImage": "images/product-7.jpg"
+      }
     ]
   },
   {
-    id: 13,
-    name: "Grand Haven Master Bed & Chaise Suite",
-    category: "bedroom",
-    rating: 4.9,
-    reviewsCount: 63,
-    badge: "Masterpiece Suite",
-    description: "Complete architectural master bedroom sanctuary featuring an upholstered king-size platform bed with fluted brass-inlay wall cladding, twin integrated soft-closing nightstands, and a sculptural curved cream lounge chaise.",
-    dimensions: "King Bed (78\"W x 84\"L) with 11' Extended Acoustic Panelling",
-    materials: "Solid Teak Internal Framing, Italian Cashmere Velvet & Bouclé, Brushed Champagne Gold Inlays",
-    leadTime: "Custom Site-Measured & Built in Studio",
-    tags: ["bed", "master bed", "bedroom suite", "king bed", "headboard", "chaise lounge", "bedroom"],
-    images: [
-      "images/real-bedroom-bed.jpg",
-      "images/real-round-bed.jpg"
+    "id": 8,
+    "name": "Elysian Curated Salon Living Ensemble",
+    "category": "living",
+    "rating": 4.9,
+    "reviewsCount": 56,
+    "badge": "Complete Curated Set",
+    "description": "Comprehensive high-end living room arrangement uniting our modular low-profile sofa, curved accent lounge chair, and organic sculpted coffee table ensemble.",
+    "dimensions": "Designed for living rooms 250 sq.ft and above",
+    "materials": "Bouclé, Brushed Travertine, Italian Velvet, Solid Ash",
+    "leadTime": "Curated Architectural Suite - VIP Consultation Included",
+    "tags": [
+      "living set",
+      "curated ensemble",
+      "sofa set",
+      "salon",
+      "full living room",
+      "luxury furniture"
     ],
-    colors: [
-      { name: "Cashmere Cream & Olive", hex: "#5a594f", bgImage: "images/real-bedroom-bed.jpg" }
-    ]
-  },
-  {
-    id: 14,
-    name: "Bespoke Architectural Wardrobe & Console Suite",
-    category: "bedroom",
-    rating: 5.0,
-    reviewsCount: 88,
-    badge: "Custom Built-In",
-    description: "Full-height floor-to-ceiling bespoke modular wardrobe crafted with flush soft-closing doors, custom elongated brushed stainless steel bar handles, central recessed TV media console nook, and 6 soft-close deep drawers.",
-    dimensions: "12'W x 9'H x 24\"D (Tailored to your exact room height & width)",
-    materials: "Marine-Grade HDHMR Core, Scratch-Resistant Warm Taupe Acrylic Laminate, Natural Oak Woodgrain Inlay, Blum/Hettich Soft-Close Hardware",
-    leadTime: "Custom Manufactured & Installed by Studio Artisans",
-    tags: ["wardrobe", "almirah", "closet", "cupboard", "bedroom storage", "tv unit", "bedroom", "drawers"],
-    images: [
-      "images/real-wardrobe.jpg",
-      "images/real-tv-console.jpg"
+    "images": [
+      "images/product-8.jpg"
     ],
-    colors: [
-      { name: "Warm Taupe & Natural Oak", hex: "#9b8d82", bgImage: "images/real-wardrobe.jpg" }
+    "colors": [
+      {
+        "name": "Ecru Bouclé",
+        "hex": "#eae3d5",
+        "bgImage": "images/product-8.jpg"
+      },
+      {
+        "name": "Warm Charcoal",
+        "hex": "#3a3a3a",
+        "bgImage": "images/product-8.jpg"
+      }
     ]
   },
   {
-    id: 15,
-    name: "Aura Fluted Wall Media & TV Console Unit",
-    category: "living",
-    rating: 4.9,
-    reviewsCount: 71,
-    badge: "Media Architecture",
-    description: "Architectural wall-mounted floating TV entertainment console finished in satin white lacquer and marble-look countertop, complemented by vertical fluted back wall panelling and integrated subwoofer/amplifier compartments.",
-    dimensions: "8'W x 18\"D x 18\"H with 8' Fluted Back Cladding",
-    materials: "High-Density Core, Italian Polyurethane Satin Lacquer, Calacatta Composite Stone, Acoustic Fluting",
-    leadTime: "Studio Handcrafted & Custom Installed",
-    tags: ["tv console", "tv unit", "media console", "entertainment unit", "living room", "credenza", "fluted"],
-    images: [
-      "images/real-tv-console.jpg",
-      "images/product-3.jpg"
+    "id": 9,
+    "name": "Royale Tufted Chesterfield Wingback Chair",
+    "category": "living",
+    "rating": 4.9,
+    "reviewsCount": 129,
+    "badge": "Heritage Classic",
+    "description": "Timeless deep-button tufted wingback reading chair with hand-hammered antiqued brass studs, scrolled rolled arms, and turned dark espresso stained hardwood legs.",
+    "dimensions": "34\"W x 36\"D x 42\"H",
+    "materials": "Full-Grain Top Grain Saddle Leather / Velvet Option, Hand-Carved Hardwood Frame",
+    "leadTime": "Crafted in Kirti Nagar Atelier",
+    "tags": [
+      "chair",
+      "armchair",
+      "chesterfield",
+      "wingback",
+      "leather",
+      "accent chair",
+      "living room",
+      "reading chair"
     ],
-    colors: [
-      { name: "Satin White & Cream Fluting", hex: "#f5f3ee", bgImage: "images/real-tv-console.jpg" }
-    ]
-  },
-  {
-    id: 16,
-    name: "Sacred Sanctum Handcrafted Teak Mandir / Pooja Unit",
-    category: "decor",
-    rating: 5.0,
-    reviewsCount: 96,
-    badge: "Handcrafted Sacred",
-    description: "Contemporary architectural Pooja mandir crafted in solid teak wood with delicate brass lattice jali, hanging brass temple bells, pull-out brass prayer tray, drawer storage for sacred articles, and warm concealed ambient lighting.",
-    dimensions: "42\"W x 20\"D x 68\"H (Custom sizing available)",
-    materials: "Grade-A Natural Kiln-Dried Teak Wood, Solid Brass Inlays & Hardware, Concealed 3000K Warm LED",
-    leadTime: "Handcrafted with Reverence in Kirti Nagar Studio",
-    tags: ["pooja unit", "mandir", "temple", "pooja mandir", "pooja cabinet", "prayer unit", "sacred", "decor"],
-    images: [
-      "images/product-1.jpg",
-      "images/product-3.jpg"
-    ],
-    colors: [
-      { name: "Sacred Teak & Brass", hex: "#633c22", bgImage: "images/product-1.jpg" }
-    ]
-  },
-  {
-    id: 17,
-    name: "Curved Artisan Lounge Chaise Chair",
-    category: "decor",
-    rating: 4.9,
-    reviewsCount: 54,
-    badge: "Artisan Handcrafted",
-    description: "Sculptural organic curved chaise lounge chair in cashmere cream upholstery. Built with sweeping ergonomic contours for cozy reading and relaxed bedroom or living room styling.",
-    dimensions: "64\"W x 34\"D x 28\"H",
-    materials: "Curved Solid Hardwood Shell, Cashmere Cream Performance Fabric, High-Density Reflex Core",
-    leadTime: "Master Handcrafted in Kirti Nagar",
-    tags: ["artisan chair", "chair", "chaise lounge", "curved chair", "accent chair", "lounge", "bedroom"],
-    images: [
-      "images/real-bedroom-bed.jpg",
+    "images": [
       "images/product-9.jpg"
     ],
-    colors: [
-      { name: "Cashmere Cream", hex: "#f0ece3", bgImage: "images/real-bedroom-bed.jpg" }
+    "colors": [
+      {
+        "name": "Cognac Leather",
+        "hex": "#8b4513",
+        "bgImage": "images/product-9.jpg"
+      },
+      {
+        "name": "Dark Espresso",
+        "hex": "#3d2b1f",
+        "bgImage": "images/product-9.jpg"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Royal Curved Fluted Round Velvet Bed",
+    "category": "bedroom",
+    "rating": 5,
+    "reviewsCount": 64,
+    "badge": "Master Suite Signature",
+    "description": "Bespoke luxury round velvet bed with sculptural curved fluted velvet acoustic headboard panel and seamless circular platform base. Custom crafted to order in our Kirti Nagar studio.",
+    "dimensions": "Custom Circular Sizing (King / Queen Mattress Compatible)",
+    "materials": "Deep Wine Burgundy Velvet, Kiln-Dried Hardwood Internal Skeleton, High-Density Acoustic Padding",
+    "leadTime": "Bespoke Atelier Order - 2 Weeks Handcrafting",
+    "tags": [
+      "bed",
+      "round bed",
+      "luxury bed",
+      "bedroom",
+      "velvet bed",
+      "fluted bed",
+      "master suite",
+      "double bed"
+    ],
+    "images": [
+      "images/real-round-bed.jpg"
+    ],
+    "colors": [
+      {
+        "name": "Imperial Crimson Velvet",
+        "hex": "#6b1d2f",
+        "bgImage": "images/real-round-bed.jpg"
+      },
+      {
+        "name": "Midnight Charcoal",
+        "hex": "#23252b",
+        "bgImage": "images/real-round-bed.jpg"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Curved Artisan Lounge Chaise Chair",
+    "category": "living",
+    "rating": 4.9,
+    "reviewsCount": 47,
+    "badge": "Bespoke Silhouette",
+    "description": "Sculptural asymmetric curved lounge chaise finished in tactile cream velvet upholstery. Designed as a standalone art piece for master bedroom suites or luxury living rooms.",
+    "dimensions": "62\"W x 34\"D x 30\"H (Custom dimensions available)",
+    "materials": "Italian Cashmere Velvet, Solid Hardwood Internal Skeleton, Ergonomic Contoured Core",
+    "leadTime": "Studio Handcrafted in Kirti Nagar",
+    "tags": [
+      "chair",
+      "chaise",
+      "lounge chair",
+      "artisan chair",
+      "curved chaise",
+      "accent chair",
+      "bedroom chair",
+      "seating"
+    ],
+    "images": [
+      "images/real-bedroom-bed.jpg"
+    ],
+    "colors": [
+      {
+        "name": "Alabaster Velvet",
+        "hex": "#f2eee6",
+        "bgImage": "images/real-bedroom-bed.jpg"
+      },
+      {
+        "name": "Champagne Taupe",
+        "hex": "#c5b59f",
+        "bgImage": "images/real-bedroom-bed.jpg"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Bespoke Architectural Wardrobe & Console Suite",
+    "category": "bedroom",
+    "rating": 5,
+    "reviewsCount": 78,
+    "badge": "Architectural Built-In",
+    "description": "Floor-to-ceiling modern luxury fitted wardrobe ensemble featuring matte cashmere lacquer finish, integrated media console nook, custom drawer bank, and slender vertical brass hardware.",
+    "dimensions": "Custom Built-to-Site (Complimentary site measurement in Delhi-NCR)",
+    "materials": "BWP Grade Marine Core, Soft-Touch Anti-Fingerprint Matte Laminate, Blum Soft-Close Systems, Brushed Steel Pulls",
+    "leadTime": "Bespoke On-Site & Studio Execution (15-20 Days)",
+    "tags": [
+      "wardrobe",
+      "almirah",
+      "closet",
+      "bedroom",
+      "storage",
+      "cabinet",
+      "built-in",
+      "tv console"
+    ],
+    "images": [
+      "images/real-wardrobe.jpg"
+    ],
+    "colors": [
+      {
+        "name": "Cashmere Taupe",
+        "hex": "#b3a99c",
+        "bgImage": "images/real-wardrobe.jpg"
+      },
+      {
+        "name": "Warm Charcoal Grey",
+        "hex": "#484542",
+        "bgImage": "images/real-wardrobe.jpg"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Aura Fluted Wall Media & TV Console Unit",
+    "category": "living",
+    "rating": 4.9,
+    "reviewsCount": 91,
+    "badge": "Studio Best Seller",
+    "description": "Low-profile marble-top entertainment and TV media console featuring acoustic open audio component bays, soft-close storage drawers, and complementary fluted wall paneling.",
+    "dimensions": "84\"W x 18\"D x 20\"H (Custom lengths up to 120\")",
+    "materials": "Engineered Hardwood, High-Gloss Italian White Marble Top, Premium Matte Polyurethane Finish",
+    "leadTime": "Custom Crafted in Kirti Nagar Studio",
+    "tags": [
+      "tv console",
+      "tv unit",
+      "media console",
+      "entertainment center",
+      "living room",
+      "fluted",
+      "storage"
+    ],
+    "images": [
+      "images/real-tv-console.jpg"
+    ],
+    "colors": [
+      {
+        "name": "Pure White & Marble",
+        "hex": "#f7f6f2",
+        "bgImage": "images/real-tv-console.jpg"
+      },
+      {
+        "name": "Warm Greige",
+        "hex": "#d9d2c5",
+        "bgImage": "images/real-tv-console.jpg"
+      }
     ]
   }
 ];
@@ -840,6 +953,7 @@ function openQuickView(productId) {
           <img id="qv-main-image" src="${product.images[0]}" alt="${product.name}" class="w-full h-full object-cover transition duration-300" />
         </div>
         <!-- Thumbnails -->
+        ${product.images.length > 1 ? `
         <div class="flex gap-3 overflow-x-auto pb-1">
           ${product.images.map((img, idx) => `
             <button 
@@ -850,6 +964,7 @@ function openQuickView(productId) {
             </button>
           `).join('')}
         </div>
+        ` : ''}
       </div>
 
       <!-- Product Information -->
